@@ -1,0 +1,12 @@
+{
+  "name": "nexaro-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NEXARO — Digital Development & Creative Studio Full-Stack Web Application",
+  "scripts": {
+    "dev": "npm --prefix nexaro-app run dev",
+    "build": "npm --prefix nexaro-app run build",
+    "start": "npm --prefix nexaro-app run start",
+    "lint": "npm --prefix nexaro-app run lint"
+  }
+}

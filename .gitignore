@@ -1,0 +1,36 @@
+# Legacy
+legacy/
+
+# Dependencies
+node_modules
+nexaro-app/node_modules
+
+# Next.js build
+.next
+nexaro-app/.next
+out
+nexaro-app/out
+
+# Production
+build
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+nexaro-app/.env*.local
+
+# Vercel
+.vercel
+nexaro-app/.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
