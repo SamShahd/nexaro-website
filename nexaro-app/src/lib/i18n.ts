@@ -10,7 +10,7 @@ export const locales: { id: Locale; label: string; path: string }[] = [
 const en = {
   "meta.title": "Website Design & Development in Istanbul | Fast, Secure Websites | NEXARO",
   "meta.description":
-    "NEXARO is a one-person studio in Istanbul building fast, secure websites for small businesses in 5-14 days with security built in. Fixed prices, no agency overhead.",
+    "NEXARO is a web & security studio in Istanbul building fast, secure websites for small businesses in 5-14 days with security built in. Fixed prices, no agency overhead.",
   "nav.services": "Services",
   "nav.pricing": "Pricing",
   "nav.work": "Work",
@@ -22,16 +22,16 @@ const en = {
   "nav.menu": "Open menu",
   "nav.close": "Close menu",
 
-  "hero.eyebrow": "One-Person Web & Security Studio · Istanbul",
+  "hero.eyebrow": "Web & Security Studio · Istanbul",
   "hero.headline": "Fast, secure websites that bring you customers.",
   "hero.subline":
-    "NEXARO is a one-person studio in Istanbul. I build websites for small businesses in 5-14 days, with security built in. Fixed prices, no agency overhead.",
+    "NEXARO is an independent studio in Istanbul. I build websites for small businesses in 5-14 days, with security built in. Fixed prices, no agency overhead.",
   "hero.cta.audit": "Get a free website audit",
   "hero.cta.pricing": "See pricing",
   "hero.trust": "Fixed prices · 50% deposit · 2 revision rounds · 30 days free support after launch",
   "hero.city": "Istanbul, Türkiye",
   "hero.tagline": "Design. Develop. Harden.",
-  "hero.note": "Solo studio · Direct collaboration with lead engineer",
+  "hero.note": "Direct collaboration with lead engineer",
 
   "benefits.1": "⚡ 5–14 days delivery",
   "benefits.2": "🛡️ Security-first (A+ score)",
@@ -165,16 +165,16 @@ const tr: Dict = {
   "nav.menu": "Menüyü aç",
   "nav.close": "Menüyü kapat",
 
-  "hero.eyebrow": "Tek Kişilik Web & Güvenlik Stüdyosu · İstanbul",
+  "hero.eyebrow": "Web & Güvenlik Stüdyosu · İstanbul",
   "hero.headline": "Müşteri kazandıran, hızlı ve güvenli web siteleri.",
   "hero.subline":
-    "NEXARO, İstanbul merkezli tek kişilik bir stüdyodur. Küçük işletmeler için 5–14 gün içinde, siber güvenlik altyapısı hazır web siteleri inşa ediyorum. Sabit fiyatlar, ajans masrafı yok.",
+    "NEXARO, İstanbul merkezli bir web ve teknoloji stüdyosudur. Küçük işletmeler için 5–14 gün içinde, siber güvenlik altyapısı hazır web siteleri inşa ediyorum. Sabit fiyatlar, ajans masrafı yok.",
   "hero.cta.audit": "Ücretsiz web sitesi denetimi al",
   "hero.cta.pricing": "Fiyatları gör",
   "hero.trust": "Sabit fiyatlar · %50 peşinat · 2 revizyon turu · Yayından sonra 30 gün ücretsiz destek",
   "hero.city": "İstanbul, Türkiye",
   "hero.tagline": "Tasarla. Kodla. Güçlendir.",
-  "hero.note": "Solo stüdyo · Doğrudan baş mühendis ile çalışma",
+  "hero.note": "Doğrudan baş mühendis ile çalışma",
 
   "benefits.1": "⚡ 5–14 günde hızlı teslim",
   "benefits.2": "🛡️ Dahili siber güvenlik (A+ puan)",
@@ -306,7 +306,7 @@ const fr: Dict = {
   "nav.menu": "Ouvrir le menu",
   "nav.close": "Fermer le menu",
 
-  "hero.eyebrow": "Studio Solo Web & Sécurité · Istanbul",
+  "hero.eyebrow": "Studio Web & Sécurité · Istanbul",
   "hero.headline": "Des sites web rapides et sécurisés qui vous apportent des clients.",
   "hero.subline":
     "NEXARO est un studio indépendant à Istanbul. Je conçois des sites web pour petites entreprises en 5 à 14 jours, avec la cybersécurité intégrée. Tarifs fixes, sans frais d'agence.",
@@ -315,7 +315,7 @@ const fr: Dict = {
   "hero.trust": "Tarifs fixes · Acompte 50 % · 2 tours de révision · 30 jours de support offert",
   "hero.city": "Istanbul, Türkiye",
   "hero.tagline": "Concevoir. Développer. Sécuriser.",
-  "hero.note": "Studio solo · Collaboration directe avec l'ingénieure",
+  "hero.note": "Collaboration directe avec l'ingénieure",
 
   "benefits.1": "⚡ Livraison en 5 à 14 jours",
   "benefits.2": "🛡️ Cybersécurité native (Note A+)",
@@ -447,16 +447,16 @@ const ar: Dict = {
   "nav.menu": "فتح القائمة",
   "nav.close": "إغلاق القائمة",
 
-  "hero.eyebrow": "استوديو الويب والأمان السيبراني المستقل · إسطنبول",
+  "hero.eyebrow": "استوديو الويب والأمان السيبراني · إسطنبول",
   "hero.headline": "مواقع سريعة وآمنة تجلب لك عملاء فعليين.",
   "hero.subline":
-    "NEXARO استوديو مستقل تديره مهندسة برمجيات في إسطنبول. أبني مواقع للأنشطة والشركات الصغيرة خلال 5–14 يومًا مع أمان مدمج وأسعار ثابتة ودون أي تكاليف إضافية للوكالات.",
+    "NEXARO استوديو مستقل في إسطنبول. أبني مواقع للأنشطة والشركات الصغيرة خلال 5–14 يومًا مع أمان مدمج وأسعار ثابتة ودون أي تكاليف إضافية للوكالات.",
   "hero.cta.audit": "احصل على فحص مجاني لموقعك",
   "hero.cta.pricing": "شاهد الأسعار",
   "hero.trust": "أسعار ثابتة · دفعة 50% · جولتا مراجعة · 30 يوم دعم فني مجاني بعد الإطلاق",
   "hero.city": "إسطنبول، تركيا",
   "hero.tagline": "تصميم. برمجة. تحصين.",
-  "hero.note": "استوديو فردي · تعامل مباشر مع المهندسة المطورة",
+  "hero.note": "تعامل مباشر مع المهندسة المطورة",
 
   "benefits.1": "⚡ تسليم سريع خلال 5 إلى 14 يومًا",
   "benefits.2": "🛡️ أمان سيبراني مدمج (تقييم A+)",

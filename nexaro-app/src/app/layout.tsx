@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | NEXARO",
   },
   description:
-    "NEXARO is a one-person studio in Istanbul building fast, secure websites for small businesses in 5-14 days with security built in. Fixed prices, no agency overhead.",
+    "NEXARO is a web & security studio in Istanbul building fast, secure websites for small businesses in 5-14 days with security built in. Fixed prices, no agency overhead.",
   keywords: [
     "Website Design Istanbul",
     "Web Development Istanbul",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Website Design & Development in Istanbul | Fast, Secure Websites | NEXARO",
     description:
-      "Fast, secure websites that bring you customers. Built in 5–14 days by a solo software & cybersecurity engineer in Istanbul. Fixed prices, zero agency overhead.",
+      "Fast, secure websites that bring you customers. Built in 5–14 days with security built in. Fixed prices, zero agency overhead.",
     url: "https://nexaro.studio",
     siteName: "NEXARO",
     locale: "en_US",

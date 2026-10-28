@@ -57,7 +57,7 @@ export default async function Image() {
               display: "flex",
             }}
           >
-            One-Person Web &amp; Security Studio
+            Web &amp; Security Studio · Istanbul
           </div>
         </div>
 

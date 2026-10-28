@@ -21,7 +21,7 @@ export function Footer() {
           <div>
             <Wordmark />
             <p className="mt-2 text-xs font-mono uppercase tracking-widest text-slate-400">
-              One-Person Studio · Fast, Secure Websites
+              Fast, Secure Websites · Istanbul
             </p>
 
             <div className="mt-6 space-y-2.5 text-xs leading-relaxed text-slate-600 dark:text-neutral-400">
