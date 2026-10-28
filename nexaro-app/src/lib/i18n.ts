@@ -115,8 +115,6 @@ const en = {
     "Direct access to the person who builds your site, with a security background most freelancers don’t have.",
   "founder.bio":
     "I'm Shahd Belhadj, a software engineering graduate with advanced expertise in cybersecurity. I founded NEXARO as an independent studio in Istanbul to give small businesses and founders clean, high-performing websites without agency bureaucracy, account managers, or junior handoffs.",
-  "founder.independent":
-    "Being solo is a deliberate advantage: you speak directly with the engineer making the design and technical decisions. You get fast answers, personal accountability, and launch-ready code in days, not months.",
   "founder.response": "⚡ Response promise: I reply within 24 hours.",
   "founder.availability": "Taking 2 new projects this month",
   "founder.cta": "Let's discuss your project →",
@@ -260,8 +258,6 @@ const tr: Dict = {
     "Sitenizi kodlayan kişiyle doğrudan iletişim; çoğu serbest çalışanda olmayan siber güvenlik uzmanlığı.",
   "founder.bio":
     "Ben Shahd Belhadj. Yazılım mühendisliği mezunuyum ve siber güvenlik alanında ileri düzey uzmanlığa sahibim. NEXARO'yu İstanbul'da küçük işletmelerin ve kurucuların ajans bürokrasisi, müşteri temsilcisi engelleri ve tecrübesiz stajyer devirleri olmadan modern web sitelerine kavuşması için kurdum.",
-  "founder.independent":
-    "Tek kişilik bir stüdyo olmak bilinçli bir avantajdır: Tasarım ve teknik kararları alan mühendisle doğrudan konuşursunuz. Hızlı yanıt alır, aylar değil günler içinde yayına çıkarsınız.",
   "founder.response": "⚡ Yanıt taahhüdü: 24 saat içinde dönüş yaparım.",
   "founder.availability": "Bu ay 2 yeni proje kabul ediyorum",
   "founder.cta": "Projenizi konuşalım →",
@@ -403,8 +399,6 @@ const fr: Dict = {
     "Un accès direct à la personne qui développe votre site, avec une expertise en cybersécurité rare chez les freelances.",
   "founder.bio":
     "Je m'appelle Shahd Belhadj, diplômée en génie logiciel avec une spécialisation avancée en cybersécurité. J'ai créé NEXARO à Istanbul pour offrir aux petites entreprises et aux fondateurs des sites fiables et performants, sans intermédiaires inutiles.",
-  "founder.independent":
-    "Travailler en solo est un choix délibéré : vous collaborez directement avec l'ingénieure qui prend les décisions. Réponses rapides, responsabilité totale et mise en ligne en quelques jours.",
   "founder.response": "⚡ Engagement de réponse : Je réponds sous 24 heures.",
   "founder.availability": "2 nouveaux projets disponibles ce mois-ci",
   "founder.cta": "Échanger sur votre projet →",
@@ -546,8 +540,6 @@ const ar: Dict = {
     "وصول مباشر إلى المهندسة التي تطور موقعك، مع خلفية في الأمن السيبراني لا يمتلكها معظم المستقلين.",
   "founder.bio":
     "أنا شهد بلحاج، خريجة هندسة البرمجيات مع تخصص متقدم في الأمن السيبراني. أسست NEXARO كاستوديو مستقل في إسطنبول لأقدم للشركات الصغيرة ورواد الأعمال مواقع سريعة وآمنة دون تعقيدات الوكالات أو مديري الحسابات أو تسليم العمل لمتدربين.",
-  "founder.independent":
-    "العمل المستقل ميزة متعمدة: تتحدث مباشرة مع المهندسة المسؤولة عن القرارات التقنية والتصميمية. تحصل على ردود سريعة، ومسؤولية كاملة، وموقع جاهز للإطلاق خلال أيام وليس شهورًا.",
   "founder.response": "⚡ التزام بالرد: أرد دائمًا خلال 24 ساعة.",
   "founder.availability": "متاح مشروعان جديدان لهذا الشهر",
   "founder.cta": "تحدث معي عن مشروعك →",

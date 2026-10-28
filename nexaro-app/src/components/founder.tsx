@@ -77,11 +77,6 @@ export function Founder() {
               {t("founder.bio")}
             </p>
 
-            {/* Merged "Independent by design" statement */}
-            <div className="mt-4 rounded-2xl border border-gray-100 bg-[#f8fafc] p-4 text-xs sm:text-sm leading-relaxed text-slate-600 dark:border-neutral-800 dark:bg-[#121620] dark:text-neutral-300">
-              {t("founder.independent")}
-            </div>
-
             {/* Response-time promise callout */}
             <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-blue-50/80 px-4 py-2 text-xs font-bold text-[#2563eb] dark:border-blue-900/60 dark:bg-blue-950/40 dark:text-blue-300">
               {t("founder.response")}
