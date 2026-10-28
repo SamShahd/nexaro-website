@@ -18,31 +18,58 @@ const geistMono = Geist_Mono({
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#111318" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0e14" },
   ],
   width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
-  title: "NEXARO — Digital Development & Creative Studio",
+  metadataBase: new URL("https://nexaro.studio"),
+  title: {
+    default: "Website Design & Development in Istanbul | Fast, Secure Websites | NEXARO",
+    template: "%s | NEXARO",
+  },
   description:
-    "NEXARO is a digital development and creative studio in Istanbul. We design and develop distinctive brand identities, high-performance websites, and practical digital products.",
+    "NEXARO is a one-person studio in Istanbul building fast, secure websites for small businesses in 5-14 days with security built in. Fixed prices, no agency overhead.",
   keywords: [
+    "Website Design Istanbul",
+    "Web Development Istanbul",
+    "web sitesi tasarımı İstanbul",
+    "kurumsal web sitesi fiyatları",
+    "e-ticaret sitesi kurulumu",
+    "Secure Websites",
+    "Cybersecurity Engineer",
+    "Small Business Websites",
     "NEXARO",
-    "Digital Studio Istanbul",
-    "Web Development",
-    "Brand Identity",
-    "Software Engineering",
-    "Digital Products",
-    "Creative Agency",
   ],
   authors: [{ name: "Shahd Belhadj", url: "https://nexaro.studio" }],
-  creator: "NEXARO",
+  creator: "Shahd Belhadj - NEXARO",
+  publisher: "NEXARO",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://nexaro.studio",
+    languages: {
+      en: "https://nexaro.studio",
+      tr: "https://nexaro.studio/tr",
+      fr: "https://nexaro.studio/fr",
+      ar: "https://nexaro.studio/ar",
+    },
+  },
   openGraph: {
-    title: "NEXARO — Design. Develop. Deliver.",
+    title: "Website Design & Development in Istanbul | Fast, Secure Websites | NEXARO",
     description:
-      "Build a stronger digital presence with NEXARO, an independent digital development and creative studio.",
+      "Fast, secure websites that bring you customers. Built in 5–14 days by a solo software & cybersecurity engineer in Istanbul. Fixed prices, zero agency overhead.",
     url: "https://nexaro.studio",
     siteName: "NEXARO",
     locale: "en_US",
@@ -50,9 +77,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NEXARO — Digital Development & Creative Studio",
+    title: "Website Design & Development in Istanbul | Fast, Secure Websites | NEXARO",
     description:
-      "Build a stronger digital presence with NEXARO. High-performance websites, distinctive brand identities, and custom digital products.",
+      "Fast, secure websites that bring you customers. Built in 5–14 days with security built in. Fixed prices, no agency overhead.",
   },
   icons: {
     icon: "/favicon.ico",

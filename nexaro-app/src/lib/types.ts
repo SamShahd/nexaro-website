@@ -2,22 +2,17 @@ export type Locale = "en" | "tr" | "fr" | "ar";
 
 export type Theme = "light" | "dark";
 
-export type ServiceId =
-  | "web"
-  | "brand"
-  | "content"
-  | "software"
-  | "documents"
-  | "support";
+export type Currency = "TRY" | "USD";
+
+export type ServiceId = "websites" | "care" | "security";
 
 export interface ContactInquiry {
   name: string;
-  email: string;
-  company?: string;
+  contact: string; // email or whatsapp
   service: string;
-  budget?: string;
-  timing?: string;
+  websiteUrl?: string; // optional for free audit
   details: string;
+  website_hp?: string; // honeypot
 }
 
 export interface ContactApiResponse {

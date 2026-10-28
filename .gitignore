@@ -34,3 +34,5 @@ nexaro-app/.vercel
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel

@@ -33,7 +33,7 @@ export function Process() {
   return (
     <section
       id="process"
-      className="relative overflow-hidden bg-[#f8faff] py-12 md:py-16 dark:bg-[#0c0e14]"
+      className="relative overflow-hidden bg-[#f8faff] py-14 md:py-20 dark:bg-[#0c0e14]"
     >
       {/* Ambient left glow */}
       <div className="pointer-events-none absolute -start-40 top-0 -z-10 h-[500px] w-[500px] rounded-full bg-blue-100/50 blur-[130px] dark:bg-blue-950/20" />
@@ -52,48 +52,56 @@ export function Process() {
               <span className="block text-[#2563eb] dark:text-blue-500">{t("process.title.2")}</span>
             </h2>
 
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-slate-500 dark:text-neutral-400">
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-slate-500 sm:text-base dark:text-neutral-400">
               {t("process.side")}
             </p>
           </div>
 
           <div className="flex items-center gap-2 self-end pb-1 md:self-auto">
-            <span className="rounded-full border border-gray-200 bg-white px-4 py-2 text-xs font-mono text-slate-500 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
-              04 Steps
+            <span className="rounded-full border border-gray-200 bg-white px-4 py-2 text-xs font-mono font-semibold text-slate-500 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
+              14-Day Delivery Sprint
             </span>
           </div>
         </div>
 
-        {/* 4 Process Step Bento Cards */}
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {/* 4 Process Step Bento Cards with Explicit Timelines and Client Requirements */}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, idx) => (
             <article
               key={step.index}
               className="group flex flex-col justify-between rounded-[28px] border border-gray-200/90 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl dark:border-neutral-800 dark:bg-[#121620]"
             >
               <div>
+                {/* Step index & Icon */}
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold tracking-wider text-slate-400">
-                    {step.index}
+                  <span className="rounded-full bg-blue-50 px-2.5 py-1 font-mono text-xs font-bold text-[#2563eb] dark:bg-blue-950/60 dark:text-blue-300">
+                    {step.timeline}
                   </span>
                   <div className="grid h-10 w-10 place-items-center rounded-full border border-gray-200 bg-[#f8fafc] text-slate-700 shadow-sm transition-transform duration-300 group-hover:scale-105 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200">
                     {icons[idx]}
                   </div>
                 </div>
 
-                <div className="my-5 h-px w-full bg-gray-100 dark:bg-neutral-800" />
+                <div className="my-4 h-px w-full bg-gray-100 dark:bg-neutral-800" />
 
-                <h3 className="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white">
+                <h3 className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-neutral-400">
-                  {step.body}
+
+                {/* Deliverables */}
+                <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-neutral-300">
+                  {step.deliverables}
                 </p>
+
+                {/* What I need from client */}
+                <div className="mt-4 rounded-xl border border-gray-100 bg-[#f8fafc] p-3 text-[11px] leading-relaxed text-slate-500 dark:border-neutral-800 dark:bg-black/30 dark:text-neutral-400">
+                  {step.clientNeeds}
+                </div>
               </div>
 
-              <div className="mt-6 flex items-center gap-1.5">
+              <div className="mt-6 flex items-center gap-1.5 border-t border-gray-100 pt-3 dark:border-neutral-800">
                 <span className="h-1 w-6 rounded-full bg-slate-200 group-hover:bg-[#2563eb] transition-colors dark:bg-neutral-800" />
-                <span className="text-[10px] font-mono text-slate-400">Phase {idx + 1}</span>
+                <span className="text-[10px] font-mono text-slate-400">Phase 0{idx + 1}</span>
               </div>
             </article>
           ))}

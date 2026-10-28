@@ -16,13 +16,12 @@ export function Header() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 15);
 
-      // Detect active section
-      const sections = ["services", "work", "pricing", "process", "founder", "contact"];
+      const sections = ["services", "pricing", "work", "process", "about", "faq", "contact"];
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 220 && rect.bottom >= 180) {
+          if (rect.top <= 240 && rect.bottom >= 140) {
             setActiveSection(section);
             break;
           }
@@ -42,7 +41,7 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-gray-150/80 bg-white/95 shadow-sm backdrop-blur-xl dark:border-neutral-800 dark:bg-[#0c0e14]/95"
+          ? "border-b border-gray-200/80 bg-white/95 shadow-sm backdrop-blur-xl dark:border-neutral-800 dark:bg-[#0c0e14]/95"
           : "border-b border-transparent bg-white/80 backdrop-blur-md dark:bg-[#0c0e14]/80"
       }`}
     >
@@ -52,8 +51,8 @@ export function Header() {
       >
         <Wordmark />
 
-        {/* Center Desktop Navigation Links Matching Reference Design */}
-        <div className="hidden items-center gap-8 lg:flex">
+        {/* Center Desktop Navigation Links in exact requested order */}
+        <div className="hidden items-center gap-7 lg:flex">
           {navItems.map((item) => {
             const sectionId = item.href.replace("#", "");
             const isActive = activeSection === sectionId;
@@ -76,9 +75,9 @@ export function Header() {
           })}
         </div>
 
-        {/* Right Actions Matching Reference Design */}
+        {/* Right Actions */}
         <div className="flex items-center gap-2.5">
-          {/* Language Selector Pill */}
+          {/* Language Selector with Dedicated URLs */}
           <div className="relative">
             <label className="sr-only" htmlFor="languageSelect">
               {t("lang.label")}
@@ -115,12 +114,12 @@ export function Header() {
             </span>
           </button>
 
-          {/* Start a Project → Button (Solid Black Pill matching reference) */}
+          {/* Get a Free Website Audit → Button */}
           <ButtonLink
             href="#contact"
             className="hidden min-h-[42px] rounded-full bg-slate-950 px-5 text-xs font-semibold text-white shadow-sm transition hover:bg-neutral-800 sm:inline-flex dark:bg-white dark:text-black dark:hover:bg-neutral-200"
           >
-            {t("nav.cta")} <span aria-hidden="true" className="ms-1">→</span>
+            {t("nav.cta")}
           </ButtonLink>
 
           {/* Mobile Menu Hamburger */}
@@ -174,7 +173,7 @@ export function Header() {
               className="w-full justify-center min-h-[48px] rounded-full bg-slate-950 text-sm text-white dark:bg-white dark:text-black"
               onClick={() => setOpen(false)}
             >
-              {t("nav.cta")} <span aria-hidden="true" className="ms-1">→</span>
+              {t("nav.cta")}
             </ButtonLink>
           </div>
         </div>

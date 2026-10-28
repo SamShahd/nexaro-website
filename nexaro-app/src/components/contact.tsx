@@ -1,36 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import {
-  getBudgetOptions,
-  getServiceOptions,
-  getTimingOptions,
-  studio,
-} from "@/lib/content";
+import { getServiceOptions, studio } from "@/lib/content";
 import { useSite } from "@/lib/site-context";
 
 export function Contact() {
   const { t, locale } = useSite();
-
   const serviceOptions = getServiceOptions(locale);
-  const budgetOptions = getBudgetOptions(locale);
-  const timingOptions = getTimingOptions(locale);
 
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    company: "",
+    contact: "",
     service: "",
-    budget: "",
-    timing: "",
+    websiteUrl: "",
     details: "",
+    website_hp: "", // Honeypot field
   });
 
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [feedbackMsg, setFeedbackMsg] = useState("");
-  const [inquiryId, setInquiryId] = useState("");
-  const [copied, setCopied] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -56,54 +45,37 @@ export function Contact() {
 
       if (res.ok && data.success) {
         setStatus("success");
-        setFeedbackMsg(data.message || t("form.success"));
-        setInquiryId(data.inquiryId || "");
+        setFeedbackMsg(data.message || t("contact.form.success"));
         setFormData({
           name: "",
-          email: "",
-          company: "",
+          contact: "",
           service: "",
-          budget: "",
-          timing: "",
+          websiteUrl: "",
           details: "",
+          website_hp: "",
         });
       } else {
         setStatus("error");
-        setFeedbackMsg(data.message || t("form.error"));
+        setFeedbackMsg(data.message || t("contact.form.error"));
       }
     } catch {
       setStatus("error");
-      setFeedbackMsg(t("form.error"));
+      setFeedbackMsg(t("contact.form.error"));
     } finally {
       setLoading(false);
     }
   };
 
-  const handleCopyBrief = () => {
-    const brief = `NEXARO Project Brief:\nName: ${formData.name || "N/A"}\nEmail: ${formData.email || "N/A"}\nCompany: ${formData.company || "N/A"}\nService: ${formData.service || "N/A"}\nBudget: ${formData.budget || "N/A"}\nTiming: ${formData.timing || "N/A"}\nDetails: ${formData.details || "N/A"}`;
-    navigator.clipboard.writeText(brief);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
-  const handleMailtoFallback = () => {
-    const subject = encodeURIComponent(`NEXARO Project Inquiry — ${formData.service || "General"}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || "Not provided"}\nService: ${formData.service}\nBudget: ${formData.budget || "Not provided"}\nTiming: ${formData.timing || "Not provided"}\n\nProject details:\n${formData.details}`
-    );
-    window.location.href = `mailto:${studio.email}?subject=${subject}&body=${body}`;
-  };
-
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#f8faff] py-12 md:py-16 dark:bg-[#0c0e14]"
+      className="relative overflow-hidden bg-[#f8faff] py-14 md:py-20 dark:bg-[#0c0e14]"
     >
       {/* Soft ethereal ambient glow */}
       <div className="pointer-events-none absolute -end-24 top-0 -z-10 h-[650px] w-[650px] rounded-full bg-blue-100/70 blur-[140px] dark:bg-blue-950/20" />
 
-      <div className="mx-auto w-[min(960px,calc(100%-2rem))] sm:w-[min(960px,calc(100%-3rem))]">
-        {/* Sleek Centered Header like Apple / Stripe */}
+      <div className="mx-auto w-[min(880px,calc(100%-2rem))] sm:w-[min(880px,calc(100%-3rem))]">
+        {/* Centered Header */}
         <div className="text-center">
           <div className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#2563eb] dark:text-blue-400">
             <span className="h-0.5 w-6 rounded-full bg-[#2563eb] dark:bg-blue-400" />
@@ -117,16 +89,50 @@ export function Contact() {
           <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-slate-500 sm:text-base dark:text-neutral-400">
             {t("contact.body")}
           </p>
+
+          {/* Quick Direct WhatsApp or Cal.com intro */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={studio.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-50 px-4 py-2 text-xs font-bold text-emerald-700 transition hover:bg-emerald-100 dark:border-emerald-500/30 dark:bg-emerald-950/40 dark:text-emerald-300"
+            >
+              <span>💬</span> Message on WhatsApp ↗
+            </a>
+            <a
+              href={studio.calUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-xs font-bold text-slate-700 transition hover:border-gray-400 hover:text-slate-950 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+            >
+              <span>📅</span> {t("contact.book")}
+            </a>
+          </div>
         </div>
 
-        {/* Clean, Focused Inquiry Bento Card */}
-        <div className="mt-10 sm:mt-12 rounded-[28px] sm:rounded-[32px] border border-gray-200/90 bg-white p-5 sm:p-10 md:p-12 shadow-[0_4px_30px_rgba(0,0,0,0.03)] dark:border-neutral-800 dark:bg-[#121620]">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid gap-6 sm:grid-cols-2">
-              {/* Name */}
+        {/* Clean 5-Field Contact Bento Card */}
+        <div className="mt-10 rounded-[28px] sm:rounded-[32px] border border-gray-200/90 bg-white p-6 sm:p-10 shadow-[0_4px_30px_rgba(0,0,0,0.03)] dark:border-neutral-800 dark:bg-[#121620]">
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Honeypot field (hidden from real users, caught by bots) */}
+            <div className="hidden" aria-hidden="true">
+              <label htmlFor="website_hp">Leave this empty</label>
+              <input
+                id="website_hp"
+                name="website_hp"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={formData.website_hp}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              {/* Field 1: Name */}
               <div>
                 <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
-                  {t("form.name")} <span className="text-[#2563eb]">*</span>
+                  {t("contact.form.name")} <span className="text-[#2563eb]">*</span>
                 </label>
                 <input
                   id="name"
@@ -135,50 +141,34 @@ export function Contact() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder={t("form.placeholder.name")}
-                  className="mt-2.5 w-full rounded-2xl border border-gray-200 bg-[#f8fafc] px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 transition focus:border-[#2563eb] focus:bg-white focus:outline-none dark:border-neutral-800 dark:bg-black/40 dark:text-white dark:placeholder-neutral-500"
+                  placeholder="e.g. Alex Smith"
+                  className="mt-2 w-full rounded-2xl border border-gray-200 bg-[#f8fafc] px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 transition focus:border-[#2563eb] focus:bg-white focus:outline-none dark:border-neutral-800 dark:bg-black/40 dark:text-white dark:placeholder-neutral-500"
                 />
               </div>
 
-              {/* Email */}
+              {/* Field 2: Email or WhatsApp */}
               <div>
-                <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
-                  {t("form.email")} <span className="text-[#2563eb]">*</span>
+                <label htmlFor="contact" className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
+                  {t("contact.form.contact")} <span className="text-[#2563eb]">*</span>
                 </label>
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
+                  id="contact"
+                  name="contact"
+                  type="text"
                   required
-                  value={formData.email}
+                  value={formData.contact}
                   onChange={handleChange}
-                  placeholder="you@company.com"
-                  className="mt-2.5 w-full rounded-2xl border border-gray-200 bg-[#f8fafc] px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 transition focus:border-[#2563eb] focus:bg-white focus:outline-none dark:border-neutral-800 dark:bg-black/40 dark:text-white dark:placeholder-neutral-500"
+                  placeholder="you@company.com or +90..."
+                  className="mt-2 w-full rounded-2xl border border-gray-200 bg-[#f8fafc] px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 transition focus:border-[#2563eb] focus:bg-white focus:outline-none dark:border-neutral-800 dark:bg-black/40 dark:text-white dark:placeholder-neutral-500"
                 />
               </div>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2">
-              {/* Company */}
-              <div>
-                <label htmlFor="company" className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
-                  {t("form.company")} <span className="text-slate-400 font-normal">({t("form.optional")})</span>
-                </label>
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="Studio or Organization"
-                  className="mt-2.5 w-full rounded-2xl border border-gray-200 bg-[#f8fafc] px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 transition focus:border-[#2563eb] focus:bg-white focus:outline-none dark:border-neutral-800 dark:bg-black/40 dark:text-white dark:placeholder-neutral-500"
-                />
-              </div>
-
-              {/* Service */}
+            <div className="grid gap-5 sm:grid-cols-2">
+              {/* Field 3: What do you need? */}
               <div>
                 <label htmlFor="service" className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
-                  {t("form.service")} <span className="text-[#2563eb]">*</span>
+                  {t("contact.form.service")} <span className="text-[#2563eb]">*</span>
                 </label>
                 <select
                   id="service"
@@ -186,10 +176,10 @@ export function Contact() {
                   required
                   value={formData.service}
                   onChange={handleChange}
-                  className="mt-2.5 w-full rounded-2xl border border-gray-200 bg-[#f8fafc] px-4 py-3.5 text-sm text-slate-900 transition focus:border-[#2563eb] focus:bg-white focus:outline-none cursor-pointer dark:border-neutral-800 dark:bg-black/40 dark:text-white"
+                  className="mt-2 w-full rounded-2xl border border-gray-200 bg-[#f8fafc] px-4 py-3.5 text-sm text-slate-900 transition focus:border-[#2563eb] focus:bg-white focus:outline-none cursor-pointer dark:border-neutral-800 dark:bg-black/40 dark:text-white"
                 >
                   <option value="" disabled>
-                    {t("form.choose")}
+                    Select an option…
                   </option>
                   {serviceOptions.map((opt) => (
                     <option key={opt} value={opt} className="bg-white text-slate-900 dark:bg-neutral-900 dark:text-white">
@@ -198,56 +188,28 @@ export function Contact() {
                   ))}
                 </select>
               </div>
-            </div>
 
-            <div className="grid gap-6 sm:grid-cols-2">
-              {/* Budget */}
+              {/* Field 4: Current Website URL (optional, for free audit) */}
               <div>
-                <label htmlFor="budget" className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
-                  {t("form.budget")} <span className="text-slate-400 font-normal">({t("form.optional")})</span>
+                <label htmlFor="websiteUrl" className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
+                  {t("contact.form.url")}
                 </label>
-                <select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
+                <input
+                  id="websiteUrl"
+                  name="websiteUrl"
+                  type="text"
+                  value={formData.websiteUrl}
                   onChange={handleChange}
-                  className="mt-2.5 w-full rounded-2xl border border-gray-200 bg-[#f8fafc] px-4 py-3.5 text-sm text-slate-900 transition focus:border-[#2563eb] focus:bg-white focus:outline-none cursor-pointer dark:border-neutral-800 dark:bg-black/40 dark:text-white"
-                >
-                  <option value="">{t("form.range")}</option>
-                  {budgetOptions.map((opt) => (
-                    <option key={opt} value={opt} className="bg-white text-slate-900 dark:bg-neutral-900 dark:text-white">
-                      {opt}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Timeline */}
-              <div>
-                <label htmlFor="timing" className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
-                  {t("form.timing")} <span className="text-slate-400 font-normal">({t("form.optional")})</span>
-                </label>
-                <select
-                  id="timing"
-                  name="timing"
-                  value={formData.timing}
-                  onChange={handleChange}
-                  className="mt-2.5 w-full rounded-2xl border border-gray-200 bg-[#f8fafc] px-4 py-3.5 text-sm text-slate-900 transition focus:border-[#2563eb] focus:bg-white focus:outline-none cursor-pointer dark:border-neutral-800 dark:bg-black/40 dark:text-white"
-                >
-                  <option value="">{t("form.select")}</option>
-                  {timingOptions.map((opt) => (
-                    <option key={opt} value={opt} className="bg-white text-slate-900 dark:bg-neutral-900 dark:text-white">
-                      {opt}
-                    </option>
-                  ))}
-                </select>
+                  placeholder="https://yourwebsite.com"
+                  className="mt-2 w-full rounded-2xl border border-gray-200 bg-[#f8fafc] px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 transition focus:border-[#2563eb] focus:bg-white focus:outline-none dark:border-neutral-800 dark:bg-black/40 dark:text-white dark:placeholder-neutral-500"
+                />
               </div>
             </div>
 
-            {/* Details */}
+            {/* Field 5: Details */}
             <div>
               <label htmlFor="details" className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
-                {t("form.details")} <span className="text-[#2563eb]">*</span>
+                {t("contact.form.details")} <span className="text-[#2563eb]">*</span>
               </label>
               <textarea
                 id="details"
@@ -256,74 +218,58 @@ export function Contact() {
                 required
                 value={formData.details}
                 onChange={handleChange}
-                placeholder={t("form.placeholder.details")}
-                className="mt-2.5 w-full rounded-2xl border border-gray-200 bg-[#f8fafc] px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 transition focus:border-[#2563eb] focus:bg-white focus:outline-none dark:border-neutral-800 dark:bg-black/40 dark:text-white dark:placeholder-neutral-500"
+                placeholder="Briefly describe your business goals, required sections, or any specific challenges…"
+                className="mt-2 w-full rounded-2xl border border-gray-200 bg-[#f8fafc] px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 transition focus:border-[#2563eb] focus:bg-white focus:outline-none dark:border-neutral-800 dark:bg-black/40 dark:text-white dark:placeholder-neutral-500"
               />
             </div>
 
-            {/* Actions */}
-            <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+            {/* Submit & Status */}
+            <div className="pt-2">
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-slate-950 px-8 text-xs font-bold text-white shadow-md transition hover:bg-neutral-800 disabled:opacity-50 cursor-pointer dark:bg-white dark:text-slate-950"
+                className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-slate-950 px-8 text-xs font-bold text-white shadow-md transition hover:bg-neutral-800 disabled:opacity-50 cursor-pointer sm:w-auto dark:bg-white dark:text-slate-950 dark:hover:bg-neutral-200"
               >
                 {loading ? (
                   <span className="flex items-center gap-2">
                     <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent dark:border-slate-950" />
-                    {t("form.sending")}
+                    {t("contact.form.sending")}
                   </span>
                 ) : (
                   <>
-                    {t("form.submit")} <span aria-hidden="true">→</span>
+                    {t("contact.form.submit")}
                   </>
                 )}
               </button>
-
-              <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-neutral-400">
-                <button
-                  type="button"
-                  onClick={handleCopyBrief}
-                  className="hover:text-slate-900 transition cursor-pointer dark:hover:text-white"
-                >
-                  {copied ? "✓ Copied" : "Copy brief"}
-                </button>
-                <span>•</span>
-                <button
-                  type="button"
-                  onClick={handleMailtoFallback}
-                  className="hover:text-slate-900 transition cursor-pointer dark:hover:text-white"
-                >
-                  Open in Mail
-                </button>
-              </div>
             </div>
+
+            {/* Privacy notice */}
+            <p className="text-[11px] leading-relaxed text-slate-400 dark:text-neutral-500">
+              {t("contact.privacy.notice")}{" "}
+              <a href="/privacy" className="underline hover:text-slate-600 dark:hover:text-neutral-300">
+                KVKK &amp; Privacy Policy
+              </a>
+              .
+            </p>
 
             {/* Status alerts */}
             {status === "success" && (
-              <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-5 text-sm text-emerald-800 dark:text-emerald-300 animate-in fade-in">
+              <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-800 dark:text-emerald-300 animate-in fade-in">
                 <div className="flex items-center gap-2 font-bold">
-                  <span>✓ Inquiry Sent Successfully</span>
-                  {inquiryId && (
-                    <span className="rounded-md bg-emerald-500/20 px-2 py-0.5 text-xs">
-                      ID: {inquiryId}
-                    </span>
-                  )}
+                  <span>✓ {feedbackMsg}</span>
                 </div>
-                <p className="mt-1 text-xs opacity-90">{feedbackMsg}</p>
               </div>
             )}
 
             {status === "error" && (
-              <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-5 text-sm text-red-800 dark:text-red-300 animate-in fade-in">
+              <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-800 dark:text-red-300 animate-in fade-in">
                 <p className="font-semibold">{feedbackMsg}</p>
-                <button
-                  type="button"
-                  onClick={handleMailtoFallback}
-                  className="mt-2 text-xs font-bold underline hover:no-underline"
+                <a
+                  href={`mailto:${studio.email}`}
+                  className="mt-2 inline-block text-xs font-bold underline hover:no-underline"
                 >
-                  Click here to email directly →
-                </button>
+                  Or email directly to {studio.email} →
+                </a>
               </div>
             )}
           </form>

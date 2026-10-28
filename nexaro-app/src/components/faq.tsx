@@ -6,17 +6,20 @@ import { useSite } from "@/lib/site-context";
 
 export function FAQ() {
   const { t, locale } = useSite();
-  const [openIdx, setOpenIdx] = useState<number | null>(0);
+  // Using an array of open indices so user can freely open multiple or toggle each independently
+  const [openIndices, setOpenIndices] = useState<number[]>([0]);
   const faqsList = getFaqs(locale);
 
   const toggle = (idx: number) => {
-    setOpenIdx(openIdx === idx ? null : idx);
+    setOpenIndices((prev) =>
+      prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
+    );
   };
 
   return (
     <section
       id="faq"
-      className="relative overflow-hidden bg-white py-12 md:py-16 dark:bg-[#0c0e14]"
+      className="relative overflow-hidden bg-white py-14 md:py-20 dark:bg-[#0c0e14]"
     >
       {/* Soft ethereal ambient glow */}
       <div className="pointer-events-none absolute -end-40 top-1/2 -z-10 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blue-100/50 blur-[140px] dark:bg-blue-950/20" />
@@ -31,10 +34,11 @@ export function FAQ() {
             </div>
 
             <h2 className="mt-3 text-[clamp(1.9rem,3.8vw,3rem)] font-extrabold leading-[1.05] tracking-[-0.04em] text-slate-950 dark:text-white">
-              {t("faq.title")}
+              {t("faq.title.1")}{" "}
+              <span className="block text-[#2563eb] dark:text-blue-500">{t("faq.title.2")}</span>
             </h2>
 
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-500 dark:text-neutral-400">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-500 sm:text-base dark:text-neutral-400">
               {t("faq.side")}
             </p>
 
@@ -43,23 +47,23 @@ export function FAQ() {
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-[#f8fafc] px-4 py-2 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-gray-400 hover:text-slate-950 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:text-white"
               >
-                <span>Have a different question?</span>
+                <span>Have a specific question?</span>
                 <span>→</span>
               </a>
             </div>
           </div>
 
-          {/* Accordion Column */}
+          {/* Accordion Column — All 8 questions toggle cleanly */}
           <div className="divide-y divide-gray-100 dark:divide-neutral-850">
             {faqsList.map((faq, idx) => {
-              const isOpen = openIdx === idx;
+              const isOpen = openIndices.includes(idx);
               return (
-                <div key={faq.q} className="py-5">
+                <div key={idx} className="py-5">
                   <button
                     type="button"
                     onClick={() => toggle(idx)}
                     aria-expanded={isOpen}
-                    className="flex w-full cursor-pointer items-center justify-between gap-4 text-left transition-colors hover:text-[#3b5bdb]"
+                    className="flex w-full cursor-pointer items-center justify-between gap-4 text-left transition-colors hover:text-[#2563eb] dark:hover:text-blue-400"
                   >
                     <span className="text-base font-bold text-slate-900 sm:text-lg dark:text-white">
                       {faq.q}
@@ -75,7 +79,7 @@ export function FAQ() {
 
                   {isOpen && (
                     <div className="mt-3 pe-8 animate-in fade-in slide-in-from-top-1 duration-200">
-                      <p className="text-xs leading-relaxed text-slate-500 sm:text-sm dark:text-neutral-400">
+                      <p className="text-xs leading-relaxed text-slate-600 sm:text-sm dark:text-neutral-400">
                         {faq.a}
                       </p>
                     </div>

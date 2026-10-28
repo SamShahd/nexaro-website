@@ -1,524 +1,590 @@
 import type { Locale } from "./types";
 
-export const locales: { id: Locale; label: string }[] = [
-  { id: "en", label: "EN" },
-  { id: "tr", label: "TR" },
-  { id: "fr", label: "FR" },
-  { id: "ar", label: "عربي" },
+export const locales: { id: Locale; label: string; path: string }[] = [
+  { id: "en", label: "EN", path: "/" },
+  { id: "tr", label: "TR", path: "/tr" },
+  { id: "fr", label: "FR", path: "/fr" },
+  { id: "ar", label: "عربي", path: "/ar" },
 ];
 
 const en = {
-  "meta.title": "NEXARO — Digital Development & Creative Studio",
+  "meta.title": "Website Design & Development in Istanbul | Fast, Secure Websites | NEXARO",
+  "meta.description":
+    "NEXARO is a one-person studio in Istanbul building fast, secure websites for small businesses in 5-14 days with security built in. Fixed prices, no agency overhead.",
   "nav.services": "Services",
-  "nav.work": "Work",
   "nav.pricing": "Pricing",
+  "nav.work": "Work",
   "nav.process": "Process",
-  "nav.founder": "Founder",
+  "nav.about": "About",
+  "nav.faq": "FAQ",
   "nav.contact": "Contact",
-  "nav.cta": "Start a Project",
+  "nav.cta": "Get a Free Website Audit →",
   "nav.menu": "Open menu",
   "nav.close": "Close menu",
-  "hero.eyebrow": "Digital development & creative studio",
-  "hero.title.1": "Build a stronger",
-  "hero.title.2": "digital presence.",
-  "hero.body":
-    "From distinctive brand identities to high-performance websites and custom digital products, NEXARO turns ideas into polished, practical experiences.",
-  "hero.work": "Explore our work",
+
+  "hero.eyebrow": "One-Person Web & Security Studio · Istanbul",
+  "hero.headline": "Fast, secure websites that bring you customers.",
+  "hero.subline":
+    "NEXARO is a one-person studio in Istanbul. I build websites for small businesses in 5-14 days, with security built in. Fixed prices, no agency overhead.",
+  "hero.cta.audit": "Get a free website audit",
+  "hero.cta.pricing": "See pricing",
+  "hero.trust": "Fixed prices · 50% deposit · 2 revision rounds · 30 days free support after launch",
   "hero.city": "Istanbul, Türkiye",
-  "hero.tagline": "Design. Develop. Deliver.",
-  "hero.chip.brand": "Brand systems",
-  "hero.chip.brand.sub": "Clear. Consistent. Distinctive.",
-  "hero.chip.product": "Digital products",
-  "hero.chip.product.sub": "Built with purpose.",
-  "hero.chip.web": "Web experiences",
-  "hero.chip.web.sub": "Designed to perform.",
-  "hero.note": "Independent studio · Istanbul / Worldwide",
-  "marquee.1": "Digital strategy",
-  "marquee.2": "Thoughtful design",
-  "marquee.3": "Clean development",
-  "marquee.4": "Commercial clarity",
-  "marquee.5": "International mindset",
-  "services.eyebrow": "Our Services",
-  "services.title.1": "Execution.",
-  "services.title.2": "That drives results.",
+  "hero.tagline": "Design. Develop. Harden.",
+  "hero.note": "Solo studio · Direct collaboration with lead engineer",
+
+  "benefits.1": "⚡ 5–14 days delivery",
+  "benefits.2": "🛡️ Security-first (A+ score)",
+  "benefits.3": "🏷️ Fixed transparent prices",
+  "benefits.4": "👤 Direct 1-on-1 with builder",
+  "benefits.5": "🔄 2 revision rounds included",
+  "benefits.6": "🤝 30 days free support",
+  "benefits.7": "🔑 100% code & design ownership",
+
+  "services.eyebrow": "What I Sell",
+  "services.title.1": "Three focused services.",
+  "services.title.2": "Zero agency bloat.",
   "services.side":
-    "From first impression to the systems behind the scenes — we turn ideas into real, working solutions.",
-  "services.explore": "Explore the service",
-  "services.cta": "Not sure where to start? Let’s talk",
-  "work.eyebrow": "Selected work",
-  "work.title": "Ideas, made tangible.",
-  "work.title.1": "Ideas,",
-  "work.title.2": "made tangible.",
-  "work.projects": "projects",
-  "work.side":
-    "A growing collection of concept work exploring digital experiences, visual systems, and useful business tools.",
-  "work.footnote":
-    "Portfolio integrity: these are illustrative concept projects created to demonstrate design direction. They are not commissioned client work, and no client outcomes or performance claims are implied.",
-  "pricing.eyebrow": "Transparent pricing",
-  "pricing.title": "Detailed prices. Clearly defined scope.",
-  "pricing.title.1": "Detailed prices.",
-  "pricing.title.2": "Clearly defined scope.",
+    "I focus exclusively on high-performance websites, ongoing technical peace of mind, and proactive cybersecurity hardening.",
+  "services.includes": "What's included:",
+  "services.addon.title": "Add-On & Custom Solutions",
+  "services.addon.brand":
+    "Brand Starter Kit (Logo, colours, fonts): ₺8,000 ($220) — sold exclusively as an add-on alongside a website project.",
+  "services.addon.custom":
+    "Custom Web Apps & Dashboards: Quote only, scoped through a structured discovery phase.",
+
+  "pricing.eyebrow": "Transparent Pricing",
+  "pricing.title.1": "Fixed prices.",
+  "pricing.title.2": "No surprise invoices.",
   "pricing.side":
-    "Transparent pricing, no hidden fees. Choose the service that fits your needs and get a clear view of what's included.",
-  "pricing.intro":
-    "Prices are in Turkish lira (TRY), excluding 20% KDV where applicable. Each line item defines a specific deliverable, quantity, and boundary—so you can estimate the total before requesting a proposal. “From” prices are starting estimates for projects that need a discovery brief.",
-  "pricing.p1.title": "Clear quantities",
-  "pricing.p1.body":
-    "Pages, products, screens, slides, posts, and time allowances are stated per service.",
-  "pricing.p2.title": "One professional standard",
-  "pricing.p2.body":
-    "The quoted scope includes the complete deliverables described—not reduced-quality tiers.",
-  "pricing.p3.title": "No surprise extras",
-  "pricing.p3.body":
-    "Add-ons and exclusions are listed. Any work outside scope is agreed in writing first.",
-  "pricing.service": "Service",
-  "pricing.scope": "Included scope",
-  "pricing.price": "Price",
-  "pricing.note":
-    "Market positioning: prices were reviewed against publicly advertised Turkish and Istanbul provider guides available in October 2026. Published rates differ by scope and are not verified transaction averages. Hosting, domains, paid licenses, platform subscriptions, advertising budgets, payment-provider fees, shipping fees, translation, copywriting, photography, printing, and third-party services are excluded unless explicitly listed. Extra revisions or changes to approved scope require written approval and may be billed at ₺1,000/hour or quoted separately. Timeline, milestones, source-file handover, and acceptance criteria are confirmed in the written proposal.",
-  "process.eyebrow": "The process",
-  "process.title": "Good work is built on clear steps.",
-  "process.title.1": "Good work is built on",
-  "process.title.2": "clear steps.",
+    "Every package comes with a written scope, exact boundaries, and clear milestones. Choose your currency and see what fits your business.",
+  "pricing.toggle.try": "Turkish Lira (TRY)",
+  "pricing.toggle.usd": "US Dollar (USD)",
+  "pricing.tabs.websites": "Websites & Audits",
+  "pricing.tabs.care": "Monthly Care Plans",
+  "pricing.tabs.addons": "Add-ons & Extras",
+  "pricing.mostPopular": "Most popular",
+  "pricing.getStarted": "Get started →",
+  "pricing.founding.badge": "Founding Client Offer",
+  "pricing.founding.title": "Save 20% on your project",
+  "pricing.founding.desc":
+    "20% off for the first 3 clients in exchange for a written testimonial and permission to showcase the finished work in my portfolio.",
+  "pricing.terms.title": "Clear Terms & Guarantees",
+  "pricing.terms.payment":
+    "Payment terms: 50% deposit to book your sprint, 50% upon final delivery (for projects above ₺50,000 / $1,500: structured 40% deposit / 30% milestone / 30% delivery).",
+  "pricing.terms.vat":
+    "Taxes & Hosting: Prices exclude 20% KDV (VAT) where applicable. You cover your own domain and hosting provider directly so you keep 100% control with zero studio markup.",
+  "pricing.terms.ownership":
+    "Ownership: You own everything. Full code repository, design assets, and content are transferred to you upon launch.",
+  "pricing.terms.invoicing":
+    "Official Invoicing: Invoiced from Istanbul, Türkiye with official commercial tax invoice (e-fatura). International clients are invoiced in USD with secure cross-border payment.",
+
+  "work.eyebrow": "Portfolio",
+  "work.title.1": "Work &",
+  "work.title.2": "case studies.",
+  "work.side":
+    "Real architecture, real code, and transparent demonstrations. Here is how I solve design, conversion, and telemetry challenges.",
+  "work.problem": "Problem",
+  "work.solution": "Delivered",
+  "work.result": "Result",
+  "work.concept": "Concept Demo",
+  "work.demo": "View Demo ↗",
+  "work.footnote":
+    "Concept integrity: These case studies represent deliberate design and engineering studies built with production Next.js code to showcase performance and aesthetic standards.",
+
+  "security.eyebrow": "Security-First Engineering",
+  "security.title.1": "Security built in,",
+  "security.title.2": "not bolted on later.",
+  "security.side":
+    "Most freelancers build for appearance and ignore security. With a cybersecurity degree, every site I launch is hardened against common exploits from day one.",
+  "security.score.badge": "A+ Grade on SecurityHeaders.com",
+  "security.score.desc":
+    "Tested and verified against industry standards for Content Security Policy, HSTS, and frame protections.",
+  "security.audit.cta": "Want your existing site checked? Get a free security audit →",
+
+  "process.eyebrow": "How We Work",
+  "process.title.1": "Fast 14-day turnaround.",
+  "process.title.2": "Zero guesswork.",
   "process.side":
-    "A transparent, collaborative process keeps decisions intentional, delivery focused, and expectations aligned from the start.",
-  "founder.eyebrow": "Founder & digital builder",
-  "founder.title.1": "Meet the mind behind",
-  "founder.title.2": "NEXARO.",
+    "A sprint-based process designed for small businesses that need to launch quickly without infinite delays.",
+
+  "founder.eyebrow": "About NEXARO",
+  "founder.title.1": "Direct access to the person",
+  "founder.title.2": "who builds your site.",
+  "founder.lead":
+    "Direct access to the person who builds your site, with a security background most freelancers don’t have.",
   "founder.bio":
-    "Shahd Belhadj is a software engineering and information systems graduate pursuing advanced expertise in cybersecurity. She founded NEXARO around a simple belief: digital products should be thoughtfully designed, technically sound, and built to solve real problems.",
-  "founder.cred1": "BSc · Software Engineering & Information Systems",
-  "founder.cred2": "Master’s · Cybersecurity",
-  "founder.cta": "Work with NEXARO",
-  "principle.eyebrow": "Independent by design",
-  "principle.title": "Small studio. Direct collaboration. Thoughtful execution.",
-  "principle.body":
-    "NEXARO is structured as a lean, founder-operated studio. You work directly with the person shaping and delivering your project—without unnecessary layers. The focus is on clear communication, considered design decisions, maintainable technology, and deliverables that serve a real purpose.",
-  "principle.cta": "Tell us what you're building",
-  "faq.eyebrow": "Good to know",
-  "faq.title": "Before we begin.",
-  "faq.side":
-    "A few practical details to help you understand how a project moves forward.",
-  "contact.eyebrow": "Start a project",
-  "contact.title": "Let's make something that matters.",
+    "I'm Shahd Belhadj, a software engineering graduate with advanced expertise in cybersecurity. I founded NEXARO as an independent studio in Istanbul to give small businesses and founders clean, high-performing websites without agency bureaucracy, account managers, or junior handoffs.",
+  "founder.independent":
+    "Being solo is a deliberate advantage: you speak directly with the engineer making the design and technical decisions. You get fast answers, personal accountability, and launch-ready code in days, not months.",
+  "founder.response": "⚡ Response promise: I reply within 24 hours.",
+  "founder.availability": "Taking 2 new projects this month",
+  "founder.cta": "Let's discuss your project →",
+
+  "faq.eyebrow": "Frequently Asked Questions",
+  "faq.title.1": "Clear answers,",
+  "faq.title.2": "before we begin.",
+  "faq.side": "Everything you need to know about pricing, timelines, support, and technical ownership.",
+
+  "contact.eyebrow": "Start Here",
+  "contact.title": "Get a free website audit or project quote.",
   "contact.body":
-    "Tell us a little about what you need. We'll use your brief to prepare the right next steps and a scoped proposal.",
-  "contact.studio": "Studio",
-  "contact.languages": "Working languages",
-  "contact.languages.value": "English · Turkish · French · Arabic",
-  "contact.approach": "Approach",
-  "contact.approach.value": "Clear scope. Thoughtful craft. Useful outcomes.",
-  "form.name": "Your name",
-  "form.email": "Email address",
-  "form.company": "Company / organization",
-  "form.service": "What do you need?",
-  "form.budget": "Indicative budget",
-  "form.timing": "Preferred timeline",
-  "form.details": "Tell us about the project",
-  "form.choose": "Choose a service",
-  "form.range": "Select a range (optional)",
-  "form.select": "Select (optional)",
-  "form.optional": "Optional",
-  "form.placeholder.name": "Name and surname",
-  "form.placeholder.details":
-    "Your goals, audience, deliverables, and anything else we should know…",
-  "form.submit": "Send inquiry",
-  "form.sending": "Sending…",
-  "form.note":
-    "Your message is sent securely to NEXARO. We reply with next steps and a scoped proposal.",
-  "form.success":
-    "Thank you. Your inquiry has been received. We will reply as soon as possible.",
-  "form.error":
-    "Something went wrong. Please try again, or email belhadjshahd9@gmail.com directly.",
+    "Tell me about your business or share your current URL. I’ll review your site's speed, security, and mobile layout, and reply within 24 hours.",
+  "contact.direct": "Prefer to chat directly? Reach me on WhatsApp or book a 15-minute call.",
+  "contact.book": "Book a 15-min discovery call on Cal.com ↗",
+  "contact.form.name": "Your Name",
+  "contact.form.contact": "Email or WhatsApp",
+  "contact.form.service": "What do you need?",
+  "contact.form.url": "Current website URL (optional, for free audit)",
+  "contact.form.details": "Tell me about your project",
+  "contact.form.submit": "Get a Free Website Audit →",
+  "contact.form.sending": "Sending inquiry…",
+  "contact.form.success": "Thanks! I’ve received your inquiry and will reply within 24 hours.",
+  "contact.form.error": "Something went wrong. Please WhatsApp or email hello@nexaro.studio directly.",
+  "contact.privacy.notice":
+    "Privacy Notice: By submitting this form, you agree to NEXARO processing your information strictly to respond to your inquiry in compliance with KVKK and privacy laws.",
+
   "footer.rights": "All rights reserved.",
   "footer.top": "Back to top",
-  "theme.dark": "Switch to dark mode",
-  "theme.light": "Switch to light mode",
+  "footer.privacy": "Privacy & KVKK Policy",
   "lang.label": "Language",
 };
 
 type Dict = typeof en;
 
-const tr: Partial<Dict> = {
-  "meta.title": "NEXARO — Dijital Geliştirme ve Yaratıcı Stüdyo",
+const tr: Dict = {
+  "meta.title": "İstanbul Web Tasarım ve Geliştirme | Hızlı ve Güvenli Web Siteleri | NEXARO",
+  "meta.description":
+    "İstanbul'da küçük işletmeler ve kurucular için 5-14 günde teslim edilen, siber güvenlik altyapısına sahip hızlı ve modern web siteleri. Sabit fiyat, doğrudan kurucu ile çalışma.",
   "nav.services": "Hizmetler",
+  "nav.pricing": "Fiyatlar",
   "nav.work": "Projeler",
-  "nav.pricing": "Fiyatlandırma",
   "nav.process": "Süreç",
-  "nav.founder": "Kurucu",
+  "nav.about": "Hakkımda",
+  "nav.faq": "SSS",
   "nav.contact": "İletişim",
-  "nav.cta": "Proje Başlat",
+  "nav.cta": "Ücretsiz Web Denetimi Al →",
   "nav.menu": "Menüyü aç",
   "nav.close": "Menüyü kapat",
-  "hero.eyebrow": "Dijital geliştirme ve yaratıcı stüdyo",
-  "hero.title.1": "Daha güçlü bir",
-  "hero.title.2": "dijital varlık.",
-  "hero.body":
-    "NEXARO, özgün marka kimliklerinden yüksek performanslı web sitelerine ve özel dijital ürünlere kadar fikirleri güçlü ve kullanışlı deneyimlere dönüştürür.",
-  "hero.work": "Projelerimizi keşfedin",
+
+  "hero.eyebrow": "Tek Kişilik Web & Güvenlik Stüdyosu · İstanbul",
+  "hero.headline": "Müşteri kazandıran, hızlı ve güvenli web siteleri.",
+  "hero.subline":
+    "NEXARO, İstanbul merkezli tek kişilik bir stüdyodur. Küçük işletmeler için 5–14 gün içinde, siber güvenlik altyapısı hazır web siteleri inşa ediyorum. Sabit fiyatlar, ajans masrafı yok.",
+  "hero.cta.audit": "Ücretsiz web sitesi denetimi al",
+  "hero.cta.pricing": "Fiyatları gör",
+  "hero.trust": "Sabit fiyatlar · %50 peşinat · 2 revizyon turu · Yayından sonra 30 gün ücretsiz destek",
   "hero.city": "İstanbul, Türkiye",
-  "hero.tagline": "Tasarla. Geliştir. Teslim Et.",
-  "hero.chip.brand": "Marka sistemleri",
-  "hero.chip.brand.sub": "Net. Tutarlı. Özgün.",
-  "hero.chip.product": "Dijital ürünler",
-  "hero.chip.product.sub": "Amaç odaklı geliştirildi.",
-  "hero.chip.web": "Web deneyimleri",
-  "hero.chip.web.sub": "Performans için tasarlandı.",
-  "hero.note": "Bağımsız stüdyo · İstanbul / Dünya çapında",
-  "marquee.1": "Dijital strateji",
-  "marquee.2": "Özenli tasarım",
-  "marquee.3": "Titiz geliştirme",
-  "marquee.4": "Ticari netlik",
-  "marquee.5": "Uluslararası bakış",
-  "services.eyebrow": "Hizmetlerimiz",
-  "services.title.1": "Uygulama.",
-  "services.title.2": "Sonuç getiren yaklaşım.",
+  "hero.tagline": "Tasarla. Kodla. Güçlendir.",
+  "hero.note": "Solo stüdyo · Doğrudan baş mühendis ile çalışma",
+
+  "benefits.1": "⚡ 5–14 günde hızlı teslim",
+  "benefits.2": "🛡️ Dahili siber güvenlik (A+ puan)",
+  "benefits.3": "🏷️ Sabit ve şeffaf fiyatlar",
+  "benefits.4": "👤 Doğrudan kurucu ile birebir iletişim",
+  "benefits.5": "🔄 2 revizyon turu dahil",
+  "benefits.6": "🤝 30 gün ücretsiz teknik destek",
+  "benefits.7": "🔑 %100 kod ve tasarım mülkiyeti",
+
+  "services.eyebrow": "NEXARO Ne Sunar?",
+  "services.title.1": "Üç net hizmet.",
+  "services.title.2": "Gereksiz masraf yok.",
   "services.side":
-    "İlk izlenimden arka plandaki sistemlere kadar fikirleri gerçek ve çalışan çözümlere dönüştürüyoruz.",
-  "services.explore": "Hizmeti keşfet",
-  "services.cta": "Nereden başlayacağınızı bilmiyor musunuz? Konuşalım",
-  "work.eyebrow": "Seçilmiş işler",
-  "work.title": "Fikirler, somut hâle geldi.",
-  "work.title.1": "Fikirler,",
-  "work.title.2": "somut hâle geldi.",
-  "work.projects": "proje",
-  "work.side":
-    "Dijital deneyimler, görsel sistemler ve kullanışlı iş araçlarını keşfeden konsept çalışmalar.",
-  "pricing.eyebrow": "Şeffaf fiyatlandırma",
-  "pricing.title": "Detaylı fiyatlar. Net kapsam.",
-  "pricing.title.1": "Detaylı fiyatlar.",
-  "pricing.title.2": "Net kapsam.",
+    "Yalnızca yüksek performanslı web siteleri, sürekli teknik bakım ve proaktif siber güvenlik denetimlerine odaklanıyorum.",
+  "services.includes": "Dahil olanlar:",
+  "services.addon.title": "Ek Hizmetler ve Özel Çözümler",
+  "services.addon.brand":
+    "Marka Başlangıç Kiti (Logo, renkler, fontlar): ₺8,000 ($220) — yalnızca web sitesi projesiyle birlikte satılır.",
+  "services.addon.custom":
+    "Özel Web Uygulamaları ve Yönetim Panelleri: Sabit fiyat yok, ücretli keşif süreciyle tekliflendirilir.",
+
+  "pricing.eyebrow": "Şeffaf Fiyatlandırma",
+  "pricing.title.1": "Sabit fiyatlar.",
+  "pricing.title.2": "Sürpriz fatura yok.",
   "pricing.side":
-    "Şeffaf fiyatlandırma, gizli ücret yok. İhtiyaçlarınıza uygun hizmeti seçin ve nelerin dahil olduğunu net bir şekilde görün.",
-  "pricing.intro":
-    "Fiyatlar Türk lirası (TRY) cinsindendir ve uygulanabildiği yerde %20 KDV hariçtir. “Başlangıç” fiyatları keşif gerektiren projeler için tahmindir.",
-  "pricing.p1.title": "Net teslimat adetleri",
-  "pricing.p1.body":
-    "Sayfa, ürün, ekran, slayt, gönderi ve süre hakları her hizmette belirtilir.",
-  "pricing.p2.title": "Tek bir profesyonel standart",
-  "pricing.p2.body":
-    "Teklif edilen kapsam, açıklanan teslimatların tamamını içerir—indirgenmiş kalite kademeleri yoktur.",
-  "pricing.p3.title": "Beklenmedik ek ücret yok",
-  "pricing.p3.body":
-    "Ekler ve hariç tutulanlar listelenir. Kapsam dışı iş önce yazılı olarak kararlaştırılır.",
-  "pricing.service": "Hizmet",
-  "pricing.scope": "Dahil olan kapsam",
-  "pricing.price": "Fiyat",
-  "process.eyebrow": "Süreç",
-  "process.title": "İyi iş, net adımlarla kurulur.",
-  "process.title.1": "İyi iş,",
-  "process.title.2": "net adımlarla kurulur.",
+    "Her paket yazılı bir kapsam, kesin teslimat sınırları ve net aşamalarla gelir. Para biriminizi seçin ve ihtiyacınıza uygun olanı inceleyin.",
+  "pricing.toggle.try": "Türk Lirası (₺ TRY)",
+  "pricing.toggle.usd": "Amerikan Doları ($ USD)",
+  "pricing.tabs.websites": "Web Siteleri & Denetim",
+  "pricing.tabs.care": "Aylık Bakım Planları",
+  "pricing.tabs.addons": "Ekstralar & İlaveler",
+  "pricing.mostPopular": "En popüler",
+  "pricing.getStarted": "Başla →",
+  "pricing.founding.badge": "Kurucu Müşteri Fırsatı",
+  "pricing.founding.title": "Projenizde %20 İndirim",
+  "pricing.founding.desc":
+    "İlk 3 müşteri için, yazılı bir referans yorumu ve tamamlanan projeyi portföyümde sergileme izni karşılığında %20 indirim.",
+  "pricing.terms.title": "Net Şartlar & Güvenceler",
+  "pricing.terms.payment":
+    "Ödeme koşulları: Çalışmaya başlamak için %50 peşinat, kalan %50 nihai teslimatta (₺50,000 üzeri projelerde 40/30/30 aşamalı ödeme).",
+  "pricing.terms.vat":
+    "Vergi ve Barındırma: Fiyatlara uygulanabildiği durumlarda %20 KDV dahil değildir. Alan adı ve barındırma doğrudan sizin adınıza açılır, %100 kontrol sizdedir.",
+  "pricing.terms.ownership":
+    "Tam Mülkiyet: Kodlar, grafikler ve içerikler dahil her şey %100 size aittir. Yayından sonra tüm dosyalar eksiksiz teslim edilir.",
+  "pricing.terms.invoicing":
+    "Resmi Faturalandırma: İstanbul'dan resmi ticari e-fatura kesilir. Yurt dışı müşteriler için USD cinsinden güvenli faturalama yapılır.",
+
+  "work.eyebrow": "Portföy & Vaka Analizleri",
+  "work.title.1": "İşler ve",
+  "work.title.2": "vaka çalışmaları.",
+  "work.side":
+    "Gerçek mimari, temiz kod ve şeffaf gösterimler. Tasarım, dönüşüm ve veri takibi sorunlarını nasıl çözdüğümü inceleyin.",
+  "work.problem": "Sorun",
+  "work.solution": "Geliştirilen",
+  "work.result": "Sonuç",
+  "work.concept": "Konsept Demo",
+  "work.demo": "Demoyu İncele ↗",
+  "work.footnote":
+    "Portföy dürüstlüğü: Bu projeler, yüksek performans standartlarını ve tasarım vizyonunu kanıtlamak amacıyla canlı Next.js koduyla hazırlanmış konsept vaka çalışmalarıdır.",
+
+  "security.eyebrow": "Siber Güvenlik Öncelikli Mühendislik",
+  "security.title.1": "Güvenlik sonradan eklenmez,",
+  "security.title.2": "en baştan inşa edilir.",
+  "security.side":
+    "Çoğu serbest çalışan web tasarımcısı yalnızca dış görünüme odaklanır, güvenliği ihmal eder. Siber güvenlik uzmanlığım sayesinde her site ilk günden itibaren saldırılara karşı sıkılaştırılır.",
+  "security.score.badge": "SecurityHeaders.com'da A+ Derecesi",
+  "security.score.desc":
+    "İçerik Güvenliği Politikası (CSP), HSTS ve iframe korumalarında uluslararası standartlara tam uyum.",
+  "security.audit.cta": "Mevcut sitenizin açıklarını öğrenmek ister misiniz? Ücretsiz denetim isteyin →",
+
+  "process.eyebrow": "Nasıl Çalışırım?",
+  "process.title.1": "14 günde teslim.",
+  "process.title.2": "Belirsizlik yok.",
   "process.side":
-    "Şeffaf ve iş birliğine dayalı bir süreç, kararları bilinçli, teslimatı odaklı tutar.",
-  "founder.eyebrow": "Kurucu ve dijital üretici",
-  "founder.title.1": "NEXARO’nun arkasındaki isim:",
-  "founder.title.2": "NEXARO.",
+    "Aylarca süren ajans gecikmeleri olmadan, hızlıca canlıya geçmek isteyen işletmeler için adım adım net bir süreç.",
+
+  "founder.eyebrow": "NEXARO Hakkında",
+  "founder.title.1": "Sitenizi kodlayan kişiyle",
+  "founder.title.2": "doğrudan iletişim.",
+  "founder.lead":
+    "Sitenizi kodlayan kişiyle doğrudan iletişim; çoğu serbest çalışanda olmayan siber güvenlik uzmanlığı.",
   "founder.bio":
-    "Shahd Belhadj, yazılım mühendisliği ve bilgi sistemleri mezunudur ve siber güvenlik alanında uzmanlığını ilerletmektedir. NEXARO’yu dijital ürünlerin özenle tasarlanması, teknik açıdan sağlam olması ve gerçek sorunları çözmesi gerektiği inancıyla kurmuştur.",
-  "founder.cred1": "Lisans · Yazılım Mühendisliği ve Bilgi Sistemleri",
-  "founder.cred2": "Yüksek Lisans · Siber Güvenlik",
-  "founder.cta": "NEXARO ile çalışın",
-  "principle.eyebrow": "Bağımsız çalışma anlayışı",
-  "principle.title": "Küçük stüdyo. Doğrudan iş birliği. Özenli uygulama.",
-  "principle.body":
-    "NEXARO, kurucunun yürüttüğü yalın bir stüdyodur. Projenizi şekillendiren ve teslim eden kişiyle doğrudan çalışırsınız.",
-  "principle.cta": "Projenizi anlatın",
-  "faq.eyebrow": "Bilmeniz gerekenler",
-  "faq.title": "Başlamadan önce.",
-  "faq.side":
-    "Bir projenin nasıl ilerlediğini anlamanıza yardımcı olacak birkaç pratik bilgi.",
-  "contact.eyebrow": "Proje başlat",
-  "contact.title": "Değer yaratan bir şey yapalım.",
+    "Ben Shahd Belhadj. Yazılım mühendisliği mezunuyum ve siber güvenlik alanında ileri düzey uzmanlığa sahibim. NEXARO'yu İstanbul'da küçük işletmelerin ve kurucuların ajans bürokrasisi, müşteri temsilcisi engelleri ve tecrübesiz stajyer devirleri olmadan modern web sitelerine kavuşması için kurdum.",
+  "founder.independent":
+    "Tek kişilik bir stüdyo olmak bilinçli bir avantajdır: Tasarım ve teknik kararları alan mühendisle doğrudan konuşursunuz. Hızlı yanıt alır, aylar değil günler içinde yayına çıkarsınız.",
+  "founder.response": "⚡ Yanıt taahhüdü: 24 saat içinde dönüş yaparım.",
+  "founder.availability": "Bu ay 2 yeni proje kabul ediyorum",
+  "founder.cta": "Projenizi konuşalım →",
+
+  "faq.eyebrow": "Sıkça Sorulan Sorular",
+  "faq.title.1": "Net yanıtlar,",
+  "faq.title.2": "başlamadan önce.",
+  "faq.side": "Fiyatlar, teslim süreleri, destek ve teknik mülkiyet hakkında bilmeniz gereken tüm ayrıntılar.",
+
+  "contact.eyebrow": "Buradan Başlayın",
+  "contact.title": "Ücretsiz web sitesi denetimi veya teklif alın.",
   "contact.body":
-    "İhtiyacınızı kısaca anlatın. Doğru sonraki adımları ve kapsamı belirlenmiş bir teklif hazırlayalım.",
-  "contact.studio": "Stüdyo",
-  "contact.languages": "Çalışma dilleri",
-  "contact.languages.value": "İngilizce · Türkçe · Fransızca · Arapça",
-  "contact.approach": "Yaklaşım",
-  "contact.approach.value": "Net kapsam. Özenli işçilik. Faydalı sonuçlar.",
-  "form.name": "Adınız",
-  "form.email": "E-posta adresi",
-  "form.company": "Şirket / kuruluş",
-  "form.service": "Neye ihtiyacınız var?",
-  "form.budget": "Tahmini bütçe",
-  "form.timing": "Tercih edilen zaman çizelgesi",
-  "form.details": "Projenizi anlatın",
-  "form.choose": "Bir hizmet seçin",
-  "form.range": "Aralık seçin (isteğe bağlı)",
-  "form.select": "Seçin (isteğe bağlı)",
-  "form.optional": "İsteğe bağlı",
-  "form.placeholder.name": "Ad ve soyad",
-  "form.placeholder.details":
-    "Hedefleriniz, hedef kitleniz, teslimatlar ve bilmemiz gereken diğer ayrıntılar…",
-  "form.submit": "Talebi gönder",
-  "form.sending": "Gönderiliyor…",
-  "form.note":
-    "Mesajınız NEXARO’ya güvenli şekilde iletilir. Sonraki adımlar ve kapsamlı bir teklifle dönüş yaparız.",
-  "form.success":
-    "Teşekkürler. Talebiniz alındı. En kısa sürede dönüş yapacağız.",
-  "form.error":
-    "Bir sorun oluştu. Lütfen tekrar deneyin veya belhadjshahd9@gmail.com adresine yazın.",
+    "İşletmenizden kısaca bahsedin veya mevcut web sitenizin adresini iletin. Sitenizin hızını, güvenliğini ve mobil uyumunu inceleyip 24 saat içinde dönüş yapayım.",
+  "contact.direct": "Doğrudan mesajlaşmak ister misiniz? WhatsApp'tan yazabilir veya 15 dakikalık tanışma görüşmesi planlayabilirsiniz.",
+  "contact.book": "Cal.com üzerinden 15 dk tanışma randevusu alın ↗",
+  "contact.form.name": "Adınız Soyadınız",
+  "contact.form.contact": "E-posta adresiniz veya WhatsApp numaranız",
+  "contact.form.service": "Hangi hizmete ihtiyacınız var?",
+  "contact.form.url": "Mevcut web sitenizin adresi (varsa, ücretsiz denetim için)",
+  "contact.form.details": "Projenizi veya hedeflerinizi kısaca anlatın",
+  "contact.form.submit": "Ücretsiz Web Denetimi Al →",
+  "contact.form.sending": "İletiliyor…",
+  "contact.form.success": "Teşekkürler! Mesajınızı aldım, 24 saat içinde sizinle iletişime geçeceğim.",
+  "contact.form.error": "Bir sorun oluştu. Lütfen doğrudan WhatsApp üzerinden veya hello@nexaro.studio adresine yazın.",
+  "contact.privacy.notice":
+    "Aydınlatma Metni: Bu formu doldurarak, bilgilerinizin yalnızca talebinize dönüş yapmak amacıyla KVKK ve gizlilik politikamıza uygun olarak işlenmesini kabul etmiş olursunuz.",
+
   "footer.rights": "Tüm hakları saklıdır.",
   "footer.top": "Başa dön",
-  "theme.dark": "Koyu moda geç",
-  "theme.light": "Açık moda geç",
+  "footer.privacy": "Gizlilik ve KVKK Politikası",
   "lang.label": "Dil",
 };
 
-const fr: Partial<Dict> = {
-  "meta.title": "NEXARO — Studio de création et développement numérique",
+const fr: Dict = {
+  "meta.title": "Conception & Développement Web à Istanbul | Sites Rapides & Sécurisés | NEXARO",
+  "meta.description":
+    "Studio indépendant à Istanbul : création de sites web rapides et sécurisés pour petites entreprises en 5 à 14 jours. Tarifs fixes, cybersécurité intégrée, sans frais d'agence.",
   "nav.services": "Services",
-  "nav.work": "Réalisations",
   "nav.pricing": "Tarifs",
+  "nav.work": "Réalisations",
   "nav.process": "Méthode",
-  "nav.founder": "Fondatrice",
+  "nav.about": "À propos",
+  "nav.faq": "FAQ",
   "nav.contact": "Contact",
-  "nav.cta": "Démarrer un projet",
+  "nav.cta": "Obtenir un Audit Gratuit →",
   "nav.menu": "Ouvrir le menu",
   "nav.close": "Fermer le menu",
-  "hero.eyebrow": "Studio de création et de développement numérique",
-  "hero.title.1": "Renforcez votre",
-  "hero.title.2": "présence numérique.",
-  "hero.body":
-    "Des identités de marque distinctives aux sites performants et produits numériques sur mesure, NEXARO transforme les idées en expériences soignées et utiles.",
-  "hero.work": "Découvrir nos projets",
+
+  "hero.eyebrow": "Studio Solo Web & Sécurité · Istanbul",
+  "hero.headline": "Des sites web rapides et sécurisés qui vous apportent des clients.",
+  "hero.subline":
+    "NEXARO est un studio indépendant à Istanbul. Je conçois des sites web pour petites entreprises en 5 à 14 jours, avec la cybersécurité intégrée. Tarifs fixes, sans frais d'agence.",
+  "hero.cta.audit": "Obtenir un audit gratuit",
+  "hero.cta.pricing": "Voir les tarifs",
+  "hero.trust": "Tarifs fixes · Acompte 50 % · 2 tours de révision · 30 jours de support offert",
   "hero.city": "Istanbul, Türkiye",
-  "hero.tagline": "Concevoir. Développer. Livrer.",
-  "hero.chip.brand": "Systèmes de marque",
-  "hero.chip.brand.sub": "Clair. Cohérent. Distinctif.",
-  "hero.chip.product": "Produits numériques",
-  "hero.chip.product.sub": "Conçus avec intention.",
-  "hero.chip.web": "Expériences web",
-  "hero.chip.web.sub": "Pensées pour performer.",
-  "hero.note": "Studio indépendant · Istanbul / International",
-  "marquee.1": "Stratégie numérique",
-  "marquee.2": "Design réfléchi",
-  "marquee.3": "Développement soigné",
-  "marquee.4": "Clarté commerciale",
-  "marquee.5": "Vision internationale",
-  "services.eyebrow": "Nos Services",
-  "services.title.1": "L'Exécution.",
-  "services.title.2": "Qui génère des résultats.",
+  "hero.tagline": "Concevoir. Développer. Sécuriser.",
+  "hero.note": "Studio solo · Collaboration directe avec l'ingénieure",
+
+  "benefits.1": "⚡ Livraison en 5 à 14 jours",
+  "benefits.2": "🛡️ Cybersécurité native (Note A+)",
+  "benefits.3": "🏷️ Tarifs fixes et transparents",
+  "benefits.4": "👤 Échange direct 1-à-1 avec la fondatrice",
+  "benefits.5": "🔄 2 tours de révision inclus",
+  "benefits.6": "🤝 30 jours de support technique offert",
+  "benefits.7": "🔑 Cession intégrale du code et du design à 100 %",
+
+  "services.eyebrow": "Ce que propose NEXARO",
+  "services.title.1": "Trois services ciblés.",
+  "services.title.2": "Zéro frais d'agence superflus.",
   "services.side":
-    "De la première impression aux systèmes en coulisses — nous transformons les idées en solutions concrètes et performantes.",
-  "services.explore": "Découvrir le service",
-  "services.cta": "Vous ne savez pas par où commencer ? Parlons-en",
-  "work.eyebrow": "Projets sélectionnés",
-  "work.title": "Des idées rendues tangibles.",
-  "work.title.1": "Des idées,",
-  "work.title.2": "rendues tangibles.",
-  "work.projects": "projets",
-  "work.side":
-    "Une collection de concepts explorant expériences digitales, systèmes visuels et outils utiles.",
-  "pricing.eyebrow": "Tarifs transparents",
-  "pricing.title": "Des tarifs détaillés. Un périmètre clairement défini.",
-  "pricing.title.1": "Des tarifs détaillés.",
-  "pricing.title.2": "Un périmètre clairement défini.",
+    "Je me consacre exclusivement aux sites web à forte conversion, aux plans de maintenance sereins et à l'audit de cybersécurité.",
+  "services.includes": "Ce qui est inclus :",
+  "services.addon.title": "Options & Solutions Sur-Mesure",
+  "services.addon.brand":
+    "Kit de Marque Initial (Logo, couleurs, typographies) : ₺8,000 ($220) — vendu exclusivement en complément d'un site web.",
+  "services.addon.custom":
+    "Applications Web & Tableaux de Bord Sur-Mesure : Sur devis uniquement, cadré via une phase de découverte dédiée.",
+
+  "pricing.eyebrow": "Tarifs Transparents",
+  "pricing.title.1": "Tarifs fixes.",
+  "pricing.title.2": "Aucun coût caché.",
   "pricing.side":
-    "Des tarifs transparents, sans frais cachés. Choisissez le service adapté à vos besoins et voyez clairement ce qui est inclus.",
-  "pricing.intro":
-    "Les prix sont en livres turques (TRY), hors TVA de 20 % le cas échéant. Les prix « à partir de » sont des estimations pour les projets nécessitant une phase de cadrage.",
-  "pricing.p1.title": "Quantités précises",
-  "pricing.p1.body":
-    "Pages, produits, écrans, slides, publications et temps inclus sont indiqués pour chaque service.",
-  "pricing.p2.title": "Un seul niveau professionnel",
-  "pricing.p2.body":
-    "Le périmètre cité comprend les livrables décrits — pas des formules de qualité réduite.",
-  "pricing.p3.title": "Aucun supplément surprise",
-  "pricing.p3.body":
-    "Les options et exclusions sont listées. Tout travail hors périmètre est d’abord convenu par écrit.",
-  "pricing.service": "Service",
-  "pricing.scope": "Périmètre inclus",
-  "pricing.price": "Prix",
-  "process.eyebrow": "La méthode",
-  "process.title": "Un bon travail repose sur des étapes claires.",
-  "process.title.1": "Un bon travail repose sur",
-  "process.title.2": "des étapes claires.",
+    "Chaque prestation s'accompagne d'un périmètre écrit, d'échéances fermes et d'étapes de validation. Choisissez votre devise.",
+  "pricing.toggle.try": "Livre Turque (TRY)",
+  "pricing.toggle.usd": "Dollar US (USD)",
+  "pricing.tabs.websites": "Sites Web & Audits",
+  "pricing.tabs.care": "Maintenance Mensuelle",
+  "pricing.tabs.addons": "Options & Add-ons",
+  "pricing.mostPopular": "Le plus populaire",
+  "pricing.getStarted": "Démarrer →",
+  "pricing.founding.badge": "Offre Client Pionnier",
+  "pricing.founding.title": "Bénéficiez de 20 % de remise",
+  "pricing.founding.desc":
+    "20 % de réduction sur vos 3 premiers projets en échange d'un témoignage écrit et de l'autorisation de présenter la réalisation dans mon portfolio.",
+  "pricing.terms.title": "Conditions Claires & Garanties",
+  "pricing.terms.payment":
+    "Modalités : Acompte de 50 % pour bloquer votre sprint, 50 % à la livraison (au-delà de ₺50,000 / $1,500 : 40 % acompte / 30 % étape / 30 % livraison).",
+  "pricing.terms.vat":
+    "TVA et Hébergement : Tarifs hors TVA (20 % le cas échéant). L'hébergement et le nom de domaine sont souscrits directement par vos soins pour préserver votre totale indépendance.",
+  "pricing.terms.ownership":
+    "Propriété intégrale : Tout vous appartient. Le code source, les fichiers de design et les contenus vous sont transférés dès le lancement.",
+  "pricing.terms.invoicing":
+    "Facturation officielle : Émise depuis Istanbul, Türkiye avec facture commerciale officielle. Facturation internationale en USD disponible.",
+
+  "work.eyebrow": "Portfolio & Études de Cas",
+  "work.title.1": "Réalisations et",
+  "work.title.2": "études concrètes.",
+  "work.side":
+    "Une vraie architecture, du code propre et des démonstrations transparentes pour répondre aux enjeux de conversion et de performance.",
+  "work.problem": "Problématique",
+  "work.solution": "Livrable",
+  "work.result": "Résultat",
+  "work.concept": "Démonstration Concept",
+  "work.demo": "Tester la démo ↗",
+  "work.footnote":
+    "Intégrité du portfolio : Ces réalisations sont des études de cas interactives conçues en Next.js pour prouver le niveau d'exigence technique et esthétique.",
+
+  "security.eyebrow": "Ingénierie Cybersécurité Native",
+  "security.title.1": "La sécurité intégrée dès le départ,",
+  "security.title.2": "pas ajoutée après coup.",
+  "security.side":
+    "La plupart des freelances privilégient l'apparence et négligent la sécurité. Diplômée en cybersécurité, je sécurise chaque site contre les attaques dès le premier jour.",
+  "security.score.badge": "Note A+ sur SecurityHeaders.com",
+  "security.score.desc":
+    "Vérifié et conforme aux standards industriels stricts pour CSP, HSTS et protection anti-clicjacking.",
+  "security.audit.cta": "Vous souhaitez tester votre site actuel ? Demandez un audit gratuit →",
+
+  "process.eyebrow": "Méthode de Travail",
+  "process.title.1": "Livraison en 14 jours.",
+  "process.title.2": "Zéro imprévu.",
   "process.side":
-    "Un processus transparent et collaboratif aligne décisions, livraison et attentes dès le départ.",
-  "founder.eyebrow": "Fondatrice et créatrice numérique",
-  "founder.title.1": "Découvrez la personne derrière",
-  "founder.title.2": "NEXARO.",
+    "Un processus structuré en sprints pensé pour les petites entreprises qui souhaitent être en ligne rapidement sans retards interminables.",
+
+  "founder.eyebrow": "À Propos de NEXARO",
+  "founder.title.1": "Un accès direct à la personne",
+  "founder.title.2": "qui conçoit votre site.",
+  "founder.lead":
+    "Un accès direct à la personne qui développe votre site, avec une expertise en cybersécurité rare chez les freelances.",
   "founder.bio":
-    "Shahd Belhadj est diplômée en génie logiciel et systèmes d’information et approfondit son expertise en cybersécurité. Elle a fondé NEXARO avec une conviction simple : les produits numériques doivent être bien conçus, techniquement solides et résoudre de vrais problèmes.",
-  "founder.cred1": "Licence · Génie logiciel et systèmes d’information",
-  "founder.cred2": "Master · Cybersécurité",
-  "founder.cta": "Travailler avec NEXARO",
-  "principle.eyebrow": "Indépendant par choix",
-  "principle.title": "Petit studio. Collaboration directe. Exécution réfléchie.",
-  "principle.body":
-    "NEXARO est un studio lean dirigé par sa fondatrice. Vous collaborez directement avec la personne qui conçoit et livre votre projet.",
-  "principle.cta": "Parlez-nous de votre projet",
-  "faq.eyebrow": "À savoir",
-  "faq.title": "Avant de commencer.",
-  "faq.side":
-    "Quelques informations pratiques pour comprendre le déroulement d’un projet.",
-  "contact.eyebrow": "Démarrer un projet",
-  "contact.title": "Créons quelque chose qui compte.",
+    "Je m'appelle Shahd Belhadj, diplômée en génie logiciel avec une spécialisation avancée en cybersécurité. J'ai créé NEXARO à Istanbul pour offrir aux petites entreprises et aux fondateurs des sites fiables et performants, sans intermédiaires inutiles.",
+  "founder.independent":
+    "Travailler en solo est un choix délibéré : vous collaborez directement avec l'ingénieure qui prend les décisions. Réponses rapides, responsabilité totale et mise en ligne en quelques jours.",
+  "founder.response": "⚡ Engagement de réponse : Je réponds sous 24 heures.",
+  "founder.availability": "2 nouveaux projets disponibles ce mois-ci",
+  "founder.cta": "Échanger sur votre projet →",
+
+  "faq.eyebrow": "Foire Aux Questions",
+  "faq.title.1": "Des réponses claires,",
+  "faq.title.2": "avant de débuter.",
+  "faq.side": "Tout ce que vous devez savoir sur nos tarifs, délais, support et propriété intellectuelle.",
+
+  "contact.eyebrow": "Contactez-moi",
+  "contact.title": "Obtenez un audit gratuit ou un devis.",
   "contact.body":
-    "Décrivez brièvement vos besoins. Nous préparerons les prochaines étapes et une proposition adaptée.",
-  "contact.studio": "Studio",
-  "contact.languages": "Langues de travail",
-  "contact.languages.value": "Anglais · Turc · Français · Arabe",
-  "contact.approach": "Approche",
-  "contact.approach.value": "Périmètre clair. Travail soigné. Résultats utiles.",
-  "form.name": "Votre nom",
-  "form.email": "Adresse e-mail",
-  "form.company": "Entreprise / organisation",
-  "form.service": "De quoi avez-vous besoin ?",
-  "form.budget": "Budget indicatif",
-  "form.timing": "Délai souhaité",
-  "form.details": "Parlez-nous du projet",
-  "form.choose": "Choisir un service",
-  "form.range": "Choisir une fourchette (facultatif)",
-  "form.select": "Choisir (facultatif)",
-  "form.optional": "Facultatif",
-  "form.placeholder.name": "Nom et prénom",
-  "form.placeholder.details":
-    "Vos objectifs, votre public, les livrables et toute autre information utile…",
-  "form.submit": "Envoyer la demande",
-  "form.sending": "Envoi…",
-  "form.note":
-    "Votre message est envoyé de manière sécurisée à NEXARO. Nous répondons avec les prochaines étapes et une proposition cadrée.",
-  "form.success":
-    "Merci. Votre demande a bien été reçue. Nous vous répondrons dès que possible.",
-  "form.error":
-    "Une erreur s’est produite. Réessayez ou écrivez à belhadjshahd9@gmail.com.",
+    "Décrivez votre activité ou transmettez-moi l'adresse de votre site web actuel. J'analyserai sa rapidité, sa sécurité et son affichage mobile, et vous répondrai sous 24h.",
+  "contact.direct": "Vous préférez échanger directement ? Contactez-moi par WhatsApp ou réservez un appel de 15 minutes.",
+  "contact.book": "Réserver un appel de 15 min sur Cal.com ↗",
+  "contact.form.name": "Votre nom",
+  "contact.form.contact": "E-mail ou numéro WhatsApp",
+  "contact.form.service": "De quoi avez-vous besoin ?",
+  "contact.form.url": "URL du site actuel (facultatif, pour audit gratuit)",
+  "contact.form.details": "Parlez-moi de votre projet",
+  "contact.form.submit": "Obtenir un Audit Gratuit →",
+  "contact.form.sending": "Envoi en cours…",
+  "contact.form.success": "Merci ! Votre demande a bien été reçue. Je vous répondrai sous 24 heures.",
+  "contact.form.error": "Une erreur s'est produite. Merci de me contacter sur WhatsApp ou par e-mail à hello@nexaro.studio.",
+  "contact.privacy.notice":
+    "Protection des données : En soumettant ce formulaire, vous acceptez que vos données soient traitées exclusivement pour répondre à votre demande conformément à notre politique de confidentialité.",
+
   "footer.rights": "Tous droits réservés.",
   "footer.top": "Retour en haut",
-  "theme.dark": "Passer en mode sombre",
-  "theme.light": "Passer en mode clair",
+  "footer.privacy": "Politique de Confidentialité & KVKK",
   "lang.label": "Langue",
 };
 
-const ar: Partial<Dict> = {
-  "meta.title": "NEXARO — استوديو التطوير الرقمي والإبداع",
+const ar: Dict = {
+  "meta.title": "تصميم وتطوير المواقع في إسطنبول | مواقع سريعة وآمنة | NEXARO",
+  "meta.description":
+    "استوديو مستقل تديره مهندسة برمجيات في إسطنبول: بناء مواقع سريعة وآمنة للشركات الصغيرة خلال 5-14 يومًا بأسعار ثابتة وأمان سيبراني مدمج دون تكاليف الوكالات الإضافية.",
   "nav.services": "الخدمات",
-  "nav.work": "أعمالنا",
   "nav.pricing": "الأسعار",
+  "nav.work": "أعمالنا",
   "nav.process": "آلية العمل",
-  "nav.founder": "المؤسسة",
-  "nav.contact": "تواصل",
-  "nav.cta": "ابدأ مشروعًا",
+  "nav.about": "نبذة",
+  "nav.faq": "الأسئلة الشائعة",
+  "nav.contact": "تواصل معنا",
+  "nav.cta": "احصل على فحص مجاني →",
   "nav.menu": "فتح القائمة",
   "nav.close": "إغلاق القائمة",
-  "hero.eyebrow": "استوديو للتطوير الرقمي والإبداع",
-  "hero.title.1": "ابنِ حضورًا رقميًا",
-  "hero.title.2": "أقوى.",
-  "hero.body":
-    "من هويات العلامات التجارية المميزة إلى المواقع عالية الأداء والمنتجات الرقمية المخصصة، تحوّل NEXARO الأفكار إلى تجارب متقنة وعملية.",
-  "hero.work": "استكشف أعمالنا",
+
+  "hero.eyebrow": "استوديو الويب والأمان السيبراني المستقل · إسطنبول",
+  "hero.headline": "مواقع سريعة وآمنة تجلب لك عملاء فعليين.",
+  "hero.subline":
+    "NEXARO استوديو مستقل تديره مهندسة برمجيات في إسطنبول. أبني مواقع للأنشطة والشركات الصغيرة خلال 5–14 يومًا مع أمان مدمج وأسعار ثابتة ودون أي تكاليف إضافية للوكالات.",
+  "hero.cta.audit": "احصل على فحص مجاني لموقعك",
+  "hero.cta.pricing": "شاهد الأسعار",
+  "hero.trust": "أسعار ثابتة · دفعة 50% · جولتا مراجعة · 30 يوم دعم فني مجاني بعد الإطلاق",
   "hero.city": "إسطنبول، تركيا",
-  "hero.tagline": "صمّم. طوّر. سلّم.",
-  "hero.chip.brand": "أنظمة العلامة التجارية",
-  "hero.chip.brand.sub": "واضح. متناسق. مميز.",
-  "hero.chip.product": "منتجات رقمية",
-  "hero.chip.product.sub": "مصممة لهدف واضح.",
-  "hero.chip.web": "تجارب الويب",
-  "hero.chip.web.sub": "مصممة للأداء.",
-  "hero.note": "استوديو مستقل · إسطنبول / حول العالم",
-  "marquee.1": "استراتيجية رقمية",
-  "marquee.2": "تصميم مدروس",
-  "marquee.3": "تطوير متقن",
-  "marquee.4": "وضوح تجاري",
-  "marquee.5": "رؤية عالمية",
-  "services.eyebrow": "خدماتنا",
-  "services.title.1": "التنفيذ.",
-  "services.title.2": "الذي يصنع الفارق.",
+  "hero.tagline": "تصميم. برمجة. تحصين.",
+  "hero.note": "استوديو فردي · تعامل مباشر مع المهندسة المطورة",
+
+  "benefits.1": "⚡ تسليم سريع خلال 5 إلى 14 يومًا",
+  "benefits.2": "🛡️ أمان سيبراني مدمج (تقييم A+)",
+  "benefits.3": "🏷️ أسعار ثابتة وشفافة دون مفاجآت",
+  "benefits.4": "👤 تعامل وتواصل مباشر 1-إلى-1 مع المطورة",
+  "benefits.5": "🔄 جولتا مراجعة وتعديل مشمولة",
+  "benefits.6": "🤝 30 يوم دعم فني مجاني بعد الإطلاق",
+  "benefits.7": "🔑 ملكية تامة لك 100% للكود والتصاميم",
+
+  "services.eyebrow": "خدمات الاستوديو",
+  "services.title.1": "ثلاث خدمات محددة.",
+  "services.title.2": "دون هدر مالي.",
   "services.side":
-    "من الانطباع الأول إلى الأنظمة خلف الكواليس — نحول الأفكار إلى حلول حقيقية وفعالة.",
-  "services.explore": "استكشف الخدمة",
-  "services.cta": "لست متأكدًا من أين تبدأ؟ لنتحدث",
-  "work.eyebrow": "أعمال مختارة",
-  "work.title": "أفكار أصبحت ملموسة.",
-  "work.title.1": "أفكار،",
-  "work.title.2": "أصبحت ملموسة.",
-  "work.projects": "مشاريع",
-  "work.side":
-    "مجموعة متنامية من المشاريع التصورية لاستكشاف التجارب الرقمية والأنظمة البصرية والأدوات العملية.",
-  "pricing.eyebrow": "أسعار واضحة",
-  "pricing.title": "أسعار مفصلة ونطاق عمل محدد بوضوح.",
-  "pricing.title.1": "أسعار مفصلة.",
-  "pricing.title.2": "ونطاق عمل محدد بوضوح.",
+    "أركز كليًا على المواقع عالية الأداء، باقات الصيانة والرعاية الشهرية، والتدقيق الأمني المتقدم للمواقع.",
+  "services.includes": "ما يشمله كل مشروع:",
+  "services.addon.title": "إضافات وحلول مخصصة",
+  "services.addon.brand":
+    "حزمة بداية الهوية البصرية (شعار، ألوان، خطوط): ₺8,000 ($220) — تُباع حصرًا كإضافة مع مشروع الموقع.",
+  "services.addon.custom":
+    "تطبيقات الويب ولوحات التحكم المخصصة: تسعير حسب الطلب، يبدأ بجلسة اكتشاف وتخطيط مدفوعة.",
+
+  "pricing.eyebrow": "أسعار واضحة وشفافة",
+  "pricing.title.1": "أسعار ثابتة.",
+  "pricing.title.2": "لا فواتير مفاجئة.",
   "pricing.side":
-    "أسعار واضحة ودقيقة، دون رسوم خفية. اختر الخدمة التي تناسب احتياجاتك واطلع على تفاصيل ما هو مشمول بكل شفافية.",
-  "pricing.intro":
-    "الأسعار بالليرة التركية (TRY) ولا تشمل ضريبة القيمة المضافة 20٪ عند انطباقها. أسعار «ابتداءً من» تقديرات أولية للمشاريع التي تحتاج مرحلة اكتشاف.",
-  "pricing.p1.title": "كميات واضحة",
-  "pricing.p1.body":
-    "الصفحات والمنتجات والشاشات والشرائح والمنشورات والساعات محددة لكل خدمة.",
-  "pricing.p2.title": "معيار مهني واحد",
-  "pricing.p2.body":
-    "النطاق المعروض يشمل التسليمات الموصوفة بالكامل — دون مستويات جودة مخفّضة.",
-  "pricing.p3.title": "لا تكاليف إضافية مفاجئة",
-  "pricing.p3.body":
-    "الإضافات والاستثناءات مدرجة. أي عمل خارج النطاق يُتفق عليه كتابيًا أولًا.",
-  "pricing.service": "الخدمة",
-  "pricing.scope": "النطاق المشمول",
-  "pricing.price": "السعر",
+    "كل باقة تأتي مع نطاق عمل مكتوب وحدود ومراحل تسليم واضحة تمامًا. اختر العملة واطلع على ما يناسب نشاطك.",
+  "pricing.toggle.try": "الليرة التركية (TRY)",
+  "pricing.toggle.usd": "الدولار الأمريكي (USD)",
+  "pricing.tabs.websites": "المواقع والفحص الأمني",
+  "pricing.tabs.care": "باقات الرعاية الشهرية",
+  "pricing.tabs.addons": "الإضافات والخدمات المكملة",
+  "pricing.mostPopular": "الأكثر طلبًا",
+  "pricing.getStarted": "ابدأ الآن →",
+  "pricing.founding.badge": "عرض العملاء المؤسسين",
+  "pricing.founding.title": "خصم 20% على مشروعك",
+  "pricing.founding.desc":
+    "خصم 20% لأول 3 عملاء جدد مقابل تقييم وتوصية مكتوبة والإذن بعرض المشروع المنجز في معرض أعمالي.",
+  "pricing.terms.title": "شروط وضمانات واضحة",
+  "pricing.terms.payment":
+    "شروط الدفع: 50% دفعة مقدمة لحجز موعد العمل، و50% عند التسليم النهائي (للمشاريع التي تتجاوز ₺50,000 / $1,500: دفعة 40% مقدمًا / 30% مع المعاينة / 30% عند الإطلاق).",
+  "pricing.terms.vat":
+    "الضرائب والاستضافة: الأسعار لا تشمل 20% ضريبة القيمة المضافة عند انطباقها. تقوم بحجز النطاق والاستضافة مباشرة باسمك لضمان تحكمك الكامل 100%.",
+  "pricing.terms.ownership":
+    "ملكية كاملة: تمتلك كل شيء بنسبة 100%. يتم تسليم كامل الكود المصدري، ملفات التصميم، والمحتوى فور الإطلاق.",
+  "pricing.terms.invoicing":
+    "فواتير رسمية: تصدر الفواتير من إسطنبول بفاتورة تجارية رسمية. نوفر للعملاء الدوليين فواتير بالدولار الأمريكي ودفعًا إلكترونيًا آمنًا.",
+
+  "work.eyebrow": "معرض الأعمال ودراسات الحالة",
+  "work.title.1": "مشاريع و",
+  "work.title.2": "نماذج حقيقية.",
+  "work.side":
+    "بنية برمجية حقيقية، كود نظيف وتجارب تفاعلية توضح كيف أحل مشكلات التصميم والأداء والتحويل.",
+  "work.problem": "المشكلة",
+  "work.solution": "ما تم بناؤه",
+  "work.result": "النتيجة",
+  "work.concept": "نموذج تجريبي",
+  "work.demo": "معاينة النموذج ↗",
+  "work.footnote":
+    "مصداقية الأعمال: تمثل هذه المشاريع دراسات ونماذج متقنة مبنية بكود Next.js فعّال لعرض مستوى الدقة الهندسية والجمالية.",
+
+  "security.eyebrow": "هندسة الأمان السيبراني أولًا",
+  "security.title.1": "الأمان مدمج في صلب الموقع،",
+  "security.title.2": "وليس مجرد فكرة ثانوية.",
+  "security.side":
+    "معظم مصممي المواقع يركزون على المظهر الخارجي ويهملون الثغرات. بفضل خلفيتي الأكاديمية في الأمن السيبراني، أسلّم كل موقع محصنًا ضد أشهر الهجمات من اليوم الأول.",
+  "security.score.badge": "تقييم A+ على موقع SecurityHeaders.com",
+  "security.score.desc":
+    "فحص معتمد وفقًا لأعلى معايير الحماية لسياسات CSP، HSTS، ومنع استغلال النماذج.",
+  "security.audit.cta": "هل ترغب في فحص موقعك الحالي؟ اطلب فحص أمان أولي مجاني →",
+
   "process.eyebrow": "آلية العمل",
-  "process.title": "العمل الجيد يُبنى على خطوات واضحة.",
-  "process.title.1": "العمل المتقن يُبنى على",
-  "process.title.2": "خطوات واضحة ومنظمة.",
+  "process.title.1": "تسليم في 14 يومًا.",
+  "process.title.2": "دون أي غموض.",
   "process.side":
-    "عملية شفافة وتعاونية تُبقي القرارات واعية والتسليم مركزًا والتوقعات متوافقة من البداية.",
-  "founder.eyebrow": "المؤسسة وصانعة الحلول الرقمية",
-  "founder.title.1": "تعرّف إلى العقل وراء",
-  "founder.title.2": "NEXARO.",
+    "منهجية عمل محددة بخطوات واضحة مصممة لأصحاب الأعمال الذين يرغبون في إطلاق سريع دون تأخير مستمر.",
+
+  "founder.eyebrow": "عن استوديو NEXARO",
+  "founder.title.1": "تواصل مباشر مع الشخص",
+  "founder.title.2": "الذي يبني موقعك.",
+  "founder.lead":
+    "وصول مباشر إلى المهندسة التي تطور موقعك، مع خلفية في الأمن السيبراني لا يمتلكها معظم المستقلين.",
   "founder.bio":
-    "شهد بلحاج خريجة هندسة البرمجيات ونظم المعلومات، وتواصل تعميق خبرتها في الأمن السيبراني. أسست NEXARO انطلاقًا من قناعة بسيطة: يجب أن تكون المنتجات الرقمية مدروسة التصميم، متينة تقنيًا، ومبنية لحل مشكلات حقيقية.",
-  "founder.cred1": "بكالوريوس · هندسة البرمجيات ونظم المعلومات",
-  "founder.cred2": "ماجستير · الأمن السيبراني",
-  "founder.cta": "اعمل مع NEXARO",
-  "principle.eyebrow": "الاستقلالية جزء من التصميم",
-  "principle.title": "استوديو صغير. تعاون مباشر. تنفيذ مدروس.",
-  "principle.body":
-    "NEXARO استوديو رشيق تديره المؤسسة. تعمل مباشرة مع الشخص الذي يصمّم مشروعك ويسلّمه.",
-  "principle.cta": "أخبرنا عما تعمل على بنائه",
-  "faq.eyebrow": "معلومات مهمة",
-  "faq.title": "قبل أن نبدأ.",
-  "faq.side": "بعض التفاصيل العملية لفهم كيفية تقدم المشروع.",
-  "contact.eyebrow": "ابدأ مشروعًا",
-  "contact.title": "لنصنع شيئًا له قيمة.",
+    "أنا شهد بلحاج، خريجة هندسة البرمجيات مع تخصص متقدم في الأمن السيبراني. أسست NEXARO كاستوديو مستقل في إسطنبول لأقدم للشركات الصغيرة ورواد الأعمال مواقع سريعة وآمنة دون تعقيدات الوكالات أو مديري الحسابات أو تسليم العمل لمتدربين.",
+  "founder.independent":
+    "العمل المستقل ميزة متعمدة: تتحدث مباشرة مع المهندسة المسؤولة عن القرارات التقنية والتصميمية. تحصل على ردود سريعة، ومسؤولية كاملة، وموقع جاهز للإطلاق خلال أيام وليس شهورًا.",
+  "founder.response": "⚡ التزام بالرد: أرد دائمًا خلال 24 ساعة.",
+  "founder.availability": "متاح مشروعان جديدان لهذا الشهر",
+  "founder.cta": "تحدث معي عن مشروعك →",
+
+  "faq.eyebrow": "الأسئلة الشائعة",
+  "faq.title.1": "إجابات واضحة،",
+  "faq.title.2": "قبل أن نبدأ.",
+  "faq.side": "كل ما يهمك معرفته حول الأسعار، المدد الزمنية، الدعم الفني، وحقوق الملكية البرمجية.",
+
+  "contact.eyebrow": "ابدأ الآن",
+  "contact.title": "احصل على فحص مجاني لموقعك أو عرض سعر.",
   "contact.body":
-    "أخبرنا باحتياجاتك بإيجاز. سنستخدم تفاصيلك لتحديد الخطوات التالية وإعداد عرض مناسب للنطاق المطلوب.",
-  "contact.studio": "الاستوديو",
-  "contact.languages": "لغات العمل",
-  "contact.languages.value": "الإنجليزية · التركية · الفرنسية · العربية",
-  "contact.approach": "نهجنا",
-  "contact.approach.value": "نطاق واضح. عمل متقن. نتائج مفيدة.",
-  "form.name": "اسمك",
-  "form.email": "البريد الإلكتروني",
-  "form.company": "الشركة / المؤسسة",
-  "form.service": "ما الخدمة التي تحتاجها؟",
-  "form.budget": "الميزانية التقريبية",
-  "form.timing": "الجدول الزمني المفضل",
-  "form.details": "أخبرنا عن المشروع",
-  "form.choose": "اختر خدمة",
-  "form.range": "اختر نطاقًا (اختياري)",
-  "form.select": "اختر (اختياري)",
-  "form.optional": "اختياري",
-  "form.placeholder.name": "الاسم الكامل",
-  "form.placeholder.details":
-    "أهدافك، جمهورك، المخرجات المطلوبة، وأي تفاصيل أخرى…",
-  "form.submit": "أرسل الطلب",
-  "form.sending": "جارٍ الإرسال…",
-  "form.note":
-    "يُرسل رسالتك بأمان إلى NEXARO. نرد بالخطوات التالية وعرض محدد النطاق.",
-  "form.success": "شكرًا لك. تم استلام طلبك وسنرد في أقرب وقت.",
-  "form.error":
-    "حدث خطأ. حاول مرة أخرى أو راسل belhadjshahd9@gmail.com مباشرة.",
+    "أخبرني عن نشاطك أو شاركني رابط موقعك الحالي. سأراجع سرعة موقعك وأمانه وتوافقه مع الهواتف، وأرد عليك خلال 24 ساعة.",
+  "contact.direct": "تفضل الحديث المباشر؟ تواصل معي على واتساب أو احجز مكالمة تعريفية لمدة 15 دقيقة.",
+  "contact.book": "احجز مكالمة تعريفية مدتها 15 دقيقة على Cal.com ↗",
+  "contact.form.name": "الاسم الكامل",
+  "contact.form.contact": "البريد الإلكتروني أو رقم الواتساب",
+  "contact.form.service": "ما الخدمة التي تحتاجها؟",
+  "contact.form.url": "رابط موقعك الحالي (اختياري، للفحص المجاني)",
+  "contact.form.details": "أخبرني تفاصيل مشروعك أو أهدافك",
+  "contact.form.submit": "احصل على فحص مجاني للموقع →",
+  "contact.form.sending": "جارٍ الإرسال…",
+  "contact.form.success": "شكرًا لك! استلمت تفاصيلك وسأرد عليك شخصيًا خلال 24 ساعة.",
+  "contact.form.error": "حدث خطأ غير متوقع. يرجى مراسلتي مباشرة عبر واتساب أو على hello@nexaro.studio.",
+  "contact.privacy.notice":
+    "إشعار الخصوصية: بإرسال هذا النموذج، فإنك توافق على معالجة معلوماتك حصرًا للرد على استفسارك وفقًا لسياسة الخصوصية وحماية البيانات.",
+
   "footer.rights": "جميع الحقوق محفوظة.",
-  "footer.top": "العودة إلى الأعلى",
-  "theme.dark": "التبديل إلى الوضع الداكن",
-  "theme.light": "التبديل إلى الوضع الفاتح",
+  "footer.top": "العودة للأعلى",
+  "footer.privacy": "سياسة الخصوصية وحماية البيانات KVKK",
   "lang.label": "اللغة",
 };
 
-const dictionaries: Record<Locale, Partial<Dict>> = { en, tr, fr, ar };
+const dictionaries: Record<Locale, Dict> = { en, tr, fr, ar };
 
 export type MessageKey = keyof Dict;
 
 export function translate(locale: Locale, key: MessageKey): string {
-  return dictionaries[locale][key] ?? en[key];
+  return dictionaries[locale]?.[key] ?? en[key] ?? key;
 }
