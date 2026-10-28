@@ -8,7 +8,6 @@ import { Hero, Marquee } from "@/components/hero";
 import { Services } from "@/components/services";
 import { Pricing } from "@/components/pricing";
 import { Work } from "@/components/work";
-import { SecurityFirst } from "@/components/security";
 import { Process } from "@/components/process";
 import { Founder } from "@/components/founder";
 import { FAQ } from "@/components/faq";
@@ -34,7 +33,6 @@ export function HomeContent({ initialLocale = "en" }: { initialLocale?: Locale }
         <Services />
         <Pricing />
         <Work />
-        <SecurityFirst />
         <Process />
         <Founder />
         <FAQ />
